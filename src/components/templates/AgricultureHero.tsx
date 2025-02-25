@@ -82,7 +82,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit }) => {
 };
 
 const AgricultureHero: React.FC = () => {
-  return (
+  return ( 
     <main className="flex flex-col items-center overflow-hidden bg-white">
       {/* Blue Box Section - With White Background Outside */}
       <div className="relative w-full flex justify-center">

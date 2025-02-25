@@ -19,7 +19,7 @@ export const ContactItem: React.FC<ContactItemProps> = ({
         <div className="self-start text-md font-semibold leading-loose text-zinc-400">
           {label}
         </div>
-        <div className="mt-1.5 text-md font-bold leading-none text-stone-900">
+        <div className="mt-1.5 py-1 text-md font-bold leading-none text-stone-900">
           {value}
         </div>
       </div>

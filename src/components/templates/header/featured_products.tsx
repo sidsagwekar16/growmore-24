@@ -36,7 +36,7 @@ const ProductCard: React.FC<ProductProps> = ({
     window.scrollTo(0,0)
   }
   return(
-  <div className="flex flex-col h-full"> {/* Ensure full height */}
+  <div className="flex flex-col h-full max-w-[45vw]"> {/* Ensure full height */}
     <article className="flex flex-col flex-grow w-full bg-neutral-50 border border-solid border-zinc-200 rounded-3xl h-full">
       {/* Image section with fixed height */}
       <img

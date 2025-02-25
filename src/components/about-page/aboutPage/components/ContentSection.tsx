@@ -17,7 +17,7 @@ export const ContentSection: React.FC<ContentSectionProps> = ({
           {heading}
         </div>
       </div>
-      <div className="mt-8 text-base leading-7 text-zinc-500 max-md:max-w-full">
+      <div className="mt-8 text-base leading-7 text-zinc-500 max-md:max-w-full text-justify">
         {description}
       </div>
       <div className="flex mt-8 max-w-full bg-sky-800 min-h-[4px] w-[635px]" />
@@ -36,7 +36,7 @@ export const ContentSection: React.FC<ContentSectionProps> = ({
         loading="lazy"
         src={imageSrc}
         alt="Section illustration"
-        className="object-contain w-full aspect-square max-md:max-w-full rounded-full"
+        className="object-cover w-full aspect-square max-md:max-w-full rounded-full"
       />
     </div>
   );
