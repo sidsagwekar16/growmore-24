@@ -4,6 +4,7 @@ import { InputField } from "./InputField.tsx";
 import { FiUser } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbPhone } from "react-icons/tb";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 interface ContactFormProps {
   formData: FormData;
@@ -74,9 +75,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 px-5 py-3 w-full text-lg font-semibold text-white bg-sky-800 rounded-xl shadow-sm transition-opacity duration-200 hover:bg-sky-700 disabled:opacity-70 disabled:cursor-not-allowed"
+        className="flex justify-center mt-6 px-5 py-3 w-full text-lg font-semibold text-white bg-sky-800 rounded-xl shadow-sm transition-opacity duration-200 hover:bg-sky-700 disabled:opacity-70 disabled:cursor-not-allowed"
       >
-        {isSubmitting ? "Submitting..." : "Send Message"}
+        {isSubmitting ? "Submitting..." : "Send Message"} <span className=" my-auto mx-2"><MdOutlineKeyboardArrowRight/></span>
       </button>
     </form>
   );
