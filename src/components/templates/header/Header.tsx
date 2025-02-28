@@ -77,8 +77,8 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-screen flex  bg-black text-white">
-        <button className=" sm:hidden tracking-wide text-center mx-auto text-md py-3" onClick={e=>setIsOpen(!isOpen)}>
+      <div className="w-screen flex  bg-white text-blue-950 border-sky-900 border-t-4 sm:border-none">
+        <button className=" sm:hidden tracking-wide text-center font-bold mx-auto text-md py-3" onClick={e=>setIsOpen(!isOpen)}>
           -- Menu --
         </button>
       </div>
@@ -94,7 +94,7 @@ export const Header: React.FC = () => {
             ))}
           </ul>
         
-        <form className=" hidden relative flex mx-4 sm:flex-row items-center border rounded-full px-2 w-full sm:w-auto">
+        <form className=" hidden relative sm:flex mx-4 sm:flex-row items-center border rounded-full px-2 w-full sm:w-auto">
             <input
               type="search"
               placeholder="Search here"

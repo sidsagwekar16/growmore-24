@@ -1,16 +1,18 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 // Define the product interface based on API structure
 interface ProductProps {
-  imgSrc?: string;
-  imgAlt?: string;
-  title?: string;
-  category?: string;
-  description?: string;
-  price?: number;
-  quantity?: number;
-  tags?: string[];
+  imgSrc:""
+  category: string,
+  description: string,
+  features: string,
+  price: string,
+  product_name:string,
+  product_spec:string,
+  quantity:string,
+  short_description:string,
+  tags: []
 }
 
 // Default image URL for products
@@ -20,9 +22,9 @@ const DEFAULT_IMAGE =
 
 
 const ProductCard: React.FC<ProductProps> = ({
-  imgSrc = DEFAULT_IMAGE,
-  imgAlt = "Product Image",
-  title = "Unknown Product",
+  imgSrc,
+  product_name,
+  product_spec,
   category = "N/A",
   description = "No description available",
   price = 0,
@@ -31,49 +33,30 @@ const ProductCard: React.FC<ProductProps> = ({
 }) => {
 
   const navigate = useNavigate()
-  const handleNavigate = (e,category) =>{
+  const handleNavigate = (e,product) =>{
     e.preventDefault()
-    navigate(`/product/${category}`)
+    navigate(`/product/${product}`)
     window.scrollTo(0,0)
   }
   
   return (
     <div className="flex flex-col h-full">
-      <article className="flex flex-col w-[90vw] mx-auto sm:w-[20vw] bg-neutral-50 border border-solid border-zinc-200 rounded-3xl h-[450px]"> 
+      <article className="flex flex-col w-[90vw] mx-auto sm:w-[20vw] bg-neutral-50 border border-solid border-zinc-200 rounded-3xl h-max"> 
         {/* Image section with fixed height */}
         <img
           loading="lazy"
           src={imgSrc}
-          alt={imgAlt}
+          alt={product_name}
           className="object-cover w-full rounded-t-3xl h-48" 
         />
         
         {/* Details section that expands to match height */}
         <div className="flex flex-col flex-grow px-4 mt-2 mb-4 overflow-hidden">
-          <h2 className="text-[1.2rem] font-extrabold text-zinc-900 truncate">{title}</h2>
+          <h2 className="text-[1.2rem] font-extrabold text-zinc-900 truncate">{product_name}</h2>
           
           <dl className="mt-2 text-base text-zinc-600 space-y-1 flex-grow overflow-hidden">
             <div>
-              <dt className="font-medium inline">Category: </dt>
-              <dd className="inline truncate">{category}</dd>
-            </div>
-            <div>
-              <dt className="font-medium inline">Description: </dt>
-              <dd className="inline truncate">{description}</dd>
-            </div>
-            <div>
-              <dt className="font-medium inline">Price: </dt>
-              <dd className="inline">₹{price}</dd>
-            </div>
-            <div>
-              <dt className="font-medium inline">Quantity: </dt>
-              <dd className="inline">{quantity}</dd>
-            </div>
-            <div>
-              <dt className="font-medium inline">Tags: </dt>
-              <dd className=" flex flex-wrap max-h-12 overflow-hidden text-ellipsis">
-                {tags.length ? tags.join(", ") : "No tags"}
-              </dd>
+              <dd className="inline truncate">{product_spec}</dd>
             </div>
           </dl>
         </div>
@@ -81,7 +64,7 @@ const ProductCard: React.FC<ProductProps> = ({
   
       {/* Buttons with equal height */}
       <div className="flex items-center justify-between gap-2 my-2 bg-white w-full">
-        <button className="flex-1 py-3 text-md font-bold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors" onClick={e => handleNavigate(e, category)}>
+        <button className="flex-1 py-3 text-md font-bold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors" onClick={e => handleNavigate(e, product_name)}>
           View more
         </button>
         <button className="flex-1 py-3 text-md font-bold text-white bg-sky-800 rounded-xl hover:bg-sky-700 transition-colors">
@@ -96,8 +79,10 @@ const ProductCard: React.FC<ProductProps> = ({
 
 const ProductCatalog: React.FC = () => {
   const [products, setProducts] = React.useState<ProductProps[]>([]);
+  const [productDescription, setProductDescription] = React.useState()
 
-  // Fetch product data on component mount
+  const {name} = useParams()
+
   React.useEffect(() => {
     fetchData();
   }, []);
@@ -105,31 +90,11 @@ const ProductCatalog: React.FC = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/collection/Home"
+        `https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/category/${name}`
       );
       const data = await response.json();
-
-      const formattedProducts = data.items
-        .map((item: any) => {
-          const key = Object.keys(item)[0]; 
-          const product = item[key]; 
-
-          if (!product || typeof product !== "object") return null;
-
-          return {
-            imgSrc: DEFAULT_IMAGE,
-            imgAlt: key,
-            title: key,
-            category: product.category || "N/A",
-            description: product.description || "No description",
-            price: product.price || 0,
-            quantity: product.quantity || 0,
-            tags: product.tags || [],
-          };
-        })
-        .filter(Boolean);
-
-      setProducts(formattedProducts);
+      setProductDescription(data.description)
+      setProducts(data.products);
     } catch (error) {
       console.error("Error fetching data", error);
       setProducts([]);
@@ -146,13 +111,11 @@ const ProductCatalog: React.FC = () => {
       </header>
       <main className="flex flex-col self-center mt-24 w-full max-w-[1733px] px-24 max-md:mt-10 max-md:px-5">
         <h2 className="text-5xl font-bold leading-tight text-zinc-800 max-md:text-4xl"> 
-          CATEGORY NAME
+          {name}
         </h2>
-        <div className="h-1 mt-3 bg-sky-800 w-[191px]" />
-        <p className="mt-3 w-full max-w-2xl text-base leading-7 text-zinc-500 text-left">
-          Growmore Technologies Limited is a Zambian company specializing in agricultural machinery, 
-          with branches across Zambia and Malawi. As the sole distributors of Farmtrac tractors, 
-          we also offer agricultural motorbikes, implements, irrigation systems.
+        <div className="h-1 mt-2 bg-sky-800 w-[191px]" />
+        <p className="mt-2 w-full max-w-2xl text-base leading-7 text-zinc-500 text-left">
+        {productDescription}
         </p>
         <section className="w-full sm:w-[90vw] mt-10" aria-label="Product listing">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-8">

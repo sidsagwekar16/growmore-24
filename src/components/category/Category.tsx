@@ -38,7 +38,7 @@ const ProductCard: React.FC<ProductProps> = ({
           alt={name}
           className="object-cover w-full rounded-t-3xl h-[45vh]" 
         />
-        <p className=" px-3 my-3 text-center text-2xl font-bold">{description}</p>
+        <p className=" px-3 my-3 text-center text-2xl font-bold">{name}</p>
       </article>
   
 
@@ -55,17 +55,16 @@ const ProductCard: React.FC<ProductProps> = ({
 
 const Category: React.FC = () => {
   const [products, setProducts] = React.useState<ProductProps[]>([]);
-
-  // Fetch product data on  mount
   React.useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const response = await fetch("");
+  // 
+      const response = await fetch("https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/categories");
       const data = await response.json();
-      setProducts(data);
+      setProducts(data.categories);
     } catch (error) {
       console.error("Error fetching data", error);
       setProducts([]);

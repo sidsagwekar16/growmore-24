@@ -21,7 +21,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} /> {/* ✅ Added About Page */}
           <Route path="/services" element={<Services />} /> {/* ✅ Added About Page */}
           <Route path="/product-list/:name" element={<ProductList />} /> {/* ✅ Added About Page */}
-          <Route path="/product/:category" element={<SingleProduct/>} />
+          <Route path="/product/:product" element={<SingleProduct/>} />
           <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
           <Route path="/categories" element={<Category/>} />
         </Routes>
