@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
         </div>
         <div className="flex gap-10 items-start self-stretch my-auto text-right min-w-[240px]">
           {footerLinks.map((link, index) => (
-            <FooterLink text={link} />
+            <FooterLink text={link}/>
           ))}
         </div>
       </div>

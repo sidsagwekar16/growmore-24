@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductProps> = ({
   
   return (
     <div className="flex flex-col h-full">
-      <article className="flex flex-col w-[90vw] mx-auto sm:w-[20vw] bg-neutral-50 border border-solid border-zinc-200 rounded-3xl h-[500px]"> 
+      <article className="flex flex-col w-[90vw] mx-auto sm:w-[20vw] bg-neutral-50 border border-solid border-zinc-200 rounded-3xl h-[450px]"> 
         {/* Image section with fixed height */}
         <img
           loading="lazy"
@@ -102,7 +102,6 @@ const ProductCatalog: React.FC = () => {
     fetchData();
   }, []);
 
-  // Function to fetch data from API
   const fetchData = async () => {
     try {
       const response = await fetch(
@@ -110,11 +109,10 @@ const ProductCatalog: React.FC = () => {
       );
       const data = await response.json();
 
-      // Transform API data into ProductProps format
       const formattedProducts = data.items
         .map((item: any) => {
-          const key = Object.keys(item)[0]; // Extract product name
-          const product = item[key]; // Get product details
+          const key = Object.keys(item)[0]; 
+          const product = item[key]; 
 
           if (!product || typeof product !== "object") return null;
 
@@ -146,12 +144,12 @@ const ProductCatalog: React.FC = () => {
           OUR PRODUCTS
         </h1>
       </header>
-      <main className="flex flex-col items-center self-center mt-24 w-full max-w-[1733px] px-9 max-md:mt-10 max-md:px-5">
-        <h2 className="text-5xl font-bold leading-tight text-zinc-800 max-md:text-4xl">
+      <main className="flex flex-col self-center mt-24 w-full max-w-[1733px] px-24 max-md:mt-10 max-md:px-5">
+        <h2 className="text-5xl font-bold leading-tight text-zinc-800 max-md:text-4xl"> 
           CATEGORY NAME
         </h2>
-        <div className="h-1 mt-7 bg-sky-800 w-[191px]" />
-        <p className="mt-6 w-full max-w-2xl text-base leading-7 text-zinc-500 text-center">
+        <div className="h-1 mt-3 bg-sky-800 w-[191px]" />
+        <p className="mt-3 w-full max-w-2xl text-base leading-7 text-zinc-500 text-left">
           Growmore Technologies Limited is a Zambian company specializing in agricultural machinery, 
           with branches across Zambia and Malawi. As the sole distributors of Farmtrac tractors, 
           we also offer agricultural motorbikes, implements, irrigation systems.

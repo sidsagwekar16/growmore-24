@@ -27,7 +27,6 @@ export const InputField: React.FC<InputFieldProps & { icon?: React.ReactNode }> 
           type={type}
           placeholder={placeholder}
           value={value}
-          minLength={10}
           onChange={(e) => onChange(e.target.value)}
           required={required}
           className="flex-1 text-sm text-gray-900 bg-transparent outline-none"

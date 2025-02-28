@@ -65,7 +65,7 @@ const MyComponent: React.FC = () => {
           {SLIDES.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full bg-white ${currentIndex === index ? 'opacity-100' : 'opacity-50'}`}
+              className={`w-3 h-3 rounded-full bg-white ${currentIndex === index ? 'opacity-100 h-8 transition delay-150' : 'opacity-50'}`}
               onClick={() => goToSlide(index)}
             />
           ))}

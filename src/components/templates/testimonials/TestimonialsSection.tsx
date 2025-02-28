@@ -51,7 +51,6 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
           <p className="mr-4 mt-4 text-base sm:text-lg text-neutral-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum justo eget nisi fermentum.
           </p>
-          <button className=" text-white p-3 bg-sky-800 my-3 rounded-md">View all Testimonials</button>
         </div>
 
         {/* Navigation Buttons - Now Fixed and Centered */}

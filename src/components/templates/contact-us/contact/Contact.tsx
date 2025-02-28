@@ -7,6 +7,7 @@ export const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
+    phoneNumber:"",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,9 +15,26 @@ export const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    try {
-      await submitForm(formData);
-    } finally {
+    try{
+      const response = await fetch(
+        "https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/contact/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+    if (response.ok) {
+      alert("Successfully subscribed!");
+    } else {
+      alert("Subscription failed. Please try again.");
+    }
+  } 
+  catch (error) {
+    alert("An error occurred. Please try again later.");
+  }finally {
       setIsSubmitting(false);
     }
   };
@@ -38,7 +56,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col px-3 py-16 md:px-8 lg:px-2 w-[90%] mx-auto">
+    <div className="flex flex-col px-3 py-16 md:px-8 lg:px-12 w-[90%] mx-auto">
       <div className="text-left">
         <h3 className="text-red-600 text-xl font-medium">Contact</h3>
         <h1 className="text-4xl font-extrabold text-gray-800 sm:text-5xl">Contact Us</h1>

@@ -2,7 +2,7 @@ export interface FormData {
   name: string;
   email: string;
   message: string;
-  phoneNumber:string
+  phoneNumber:int;
 }
 
 export interface InputFieldProps {

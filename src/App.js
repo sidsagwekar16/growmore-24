@@ -8,6 +8,8 @@ import Services from "./components/services.tsx";
 import ProductList from "./components/ProductList.tsx";
 import "./App.css";
 import SingleProduct from "./components/single-product/SingleProduct.tsx";
+import PrivacyPolicy from "./components/privacy-policy/PrivacyPolicy.tsx";
+import Category from "./components/category/Category.tsx";
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} /> {/* ✅ Added About Page */}
           <Route path="/services" element={<Services />} /> {/* ✅ Added About Page */}
-          <Route path="/product-list" element={<ProductList />} /> {/* ✅ Added About Page */}
+          <Route path="/product-list/:name" element={<ProductList />} /> {/* ✅ Added About Page */}
           <Route path="/product/:category" element={<SingleProduct/>} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+          <Route path="/categories" element={<Category/>} />
         </Routes>
       </main>
       <Footer /> {/* ✅ Footer is now directly inside App.js */}

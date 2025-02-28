@@ -44,7 +44,7 @@ const contactItems = [
 const navigationItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Products", hasDropdown: true, path: "/product-list" },
+  { label: "Products", path: "/categories" },
   { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
 ];
@@ -94,7 +94,7 @@ export const Header: React.FC = () => {
             ))}
           </ul>
         
-        <form className="relative flex mx-4 sm:flex-row items-center border rounded-full px-2 w-full sm:w-auto">
+        <form className=" hidden relative flex mx-4 sm:flex-row items-center border rounded-full px-2 w-full sm:w-auto">
             <input
               type="search"
               placeholder="Search here"

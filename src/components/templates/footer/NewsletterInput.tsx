@@ -52,7 +52,7 @@ export const NewsletterInput: React.FC<NewsletterInputProps> = ({
     {message && <p className="text-sm text-black mt-2">{message}</p>}
     <button
       type="submit"
-      className="gap-2 self-start px-6 py-4 mt-6 text-sm text-center text-white rounded-md bg-slate-400 min-h-[48px] max-md:px-5"
+      className="gap-2 self-start px-6 py-4 mt-6 text-sm text-center text-white rounded-md bg-sky-800 min-h-[48px] max-md:px-5 hover:bg-sky-700"
     >
       Get To Know Me
     </button>
