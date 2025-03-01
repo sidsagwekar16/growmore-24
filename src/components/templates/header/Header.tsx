@@ -45,8 +45,8 @@ const navigationItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Products", path: "/categories" },
-  { label: "Blog", path: "/blog" },
-  { label: "Contact", path: "/contact" },
+  {/*{ label: "Blog", path: "/blog" },
+  { label: "Contact", path: "/contact" },*/}
 ];
 
 export const Header: React.FC = () => {

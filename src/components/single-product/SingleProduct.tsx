@@ -154,7 +154,7 @@ const SingleProduct = () => {
         </div>
       </section>
 
-      <section className="h-[45vh] my-[5vh] w-[87vw] mx-auto">
+      <section className="h-max my-[5vh] w-[87vw] mx-auto">
         <h2 className="text-xl font-bold mb-4">Product Information</h2>
         <TableContainer component={Paper} style={{borderRadius:"10px"}}>
           <Table sx={{ minWidth: 300 }} aria-label="customized table">
@@ -169,7 +169,7 @@ const SingleProduct = () => {
               {productData.rowData.map((row, rowIndex) => (
                 <StyledTableRow key={rowIndex}>
                   {row.map((cell, cellIndex) => (
-                    <StyledTableCell key={cellIndex} className='' colSpan={cell.colspan}>
+                    <StyledTableCell key={cellIndex} colSpan={cell.colspan}>
                       {cell.name}
                     </StyledTableCell>
                   ))}
