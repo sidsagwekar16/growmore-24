@@ -8,7 +8,7 @@ export const ContactItem: React.FC<ContactItemProps> = ({
   href,
 }) => {
   const Content = () => (
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-row gap-4 sm:hidden md:flex">
       <img
         loading="lazy"
         src={icon}

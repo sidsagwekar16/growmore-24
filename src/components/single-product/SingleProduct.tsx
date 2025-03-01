@@ -18,10 +18,6 @@ interface TabPanelProps {
   value: number;
 }
 
-interface SingleProductProps {
-
-}
-
 {/* Tabs */}
 function CustomTabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
@@ -45,19 +41,19 @@ function a11yProps(index: number) {
   };
 }
 
-const BasicTabs = ({features,description}) => {
-  const [value, setValue] = React.useState(0);
+const BasicTabs = ({ features, description }) => {
+  const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: '100%', height:'90vh' }}>
+    <Box sx={{ width: '100%', height: '100%'}}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Description" {...a11yProps(0)} sx={{ width: "48%" , marginX:"1%" , color: 'balck', borderRadius:'.4rem','&.Mui-selected': { backgroundColor: "rgb(17 24 39)", color: 'white'}}} />
-          <Tab label="Features" {...a11yProps(1)} sx={{ width: "48%", marginX:"1%", color: 'black', borderRadius:'.4rem', '&.Mui-selected': { backgroundColor: "rgb(17 24 39)", color: 'white' }}}/>
+          <Tab label="Description" {...a11yProps(0)} sx={{ width: "48%", marginX: "1%", color: 'black', borderRadius: '.4rem', '&.Mui-selected': { backgroundColor: "rgb(17 24 39)", color: 'white' } }} />
+          <Tab label="Features" {...a11yProps(1)} sx={{ width: "48%", marginX: "1%", color: 'black', borderRadius: '.4rem', '&.Mui-selected': { backgroundColor: "rgb(17 24 39)", color: 'white' } }} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>{features}</CustomTabPanel>
@@ -66,12 +62,9 @@ const BasicTabs = ({features,description}) => {
   );
 };
 
-
-
 {/* Table */}
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
@@ -85,26 +78,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const createData = (name: string, value: number) => {
-  return { name, value };
-};
-
-const rows = [
-  createData('Frozen yoghurt', 159),
-  createData('Ice cream sandwich', 237),
-  createData('Eclair', 262),
-  createData('Cupcake', 305),
-  createData('Gingerbread', 356),
-];
-
-
-
-
-
 const SingleProduct = () => {
   const { product } = useParams();
 
-  const [productData,setProductData] = useState({
+  const [productData, setProductData] = useState({
     product_name: "",
     product_spec: "",
     price: 0,
@@ -113,11 +90,12 @@ const SingleProduct = () => {
     description: "",
     short_description: "",
     features: "",
-    tags: [],
-    images: [],
-    table_data: []
-  })
-  
+    tags: [""],
+    images: [""],
+    headingData: [],
+    rowData: [[]] 
+  });
+
   useEffect(()=>{
     fetchProduct()
   },[])
@@ -171,31 +149,35 @@ const SingleProduct = () => {
         </div>
         
         {/* Tabs Section */}
-        <div className="sm:w-1/3 w-full my-auto bg-gray-100 p-6 rounded-lg shadow-md">
+        <div className="sm:w-1/3 w-full my-auto h-max sm:h-[80vh] bg-gray-100 p-6 rounded-lg shadow-md">
           <BasicTabs features={productData.features} description={productData.description}/>
         </div>
       </section>
 
       <section className="h-[45vh] my-[5vh] w-[87vw] mx-auto">
-      <h2 className="text-xl font-bold mb-4">Product Information</h2>
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 300 }} aria-label="customized table">
-              <TableHead>
-                <TableRow>
-                  <StyledTableCell>Feature</StyledTableCell>
-                  <StyledTableCell align="right">Value</StyledTableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row) => (
-                  <StyledTableRow key={row.name}>
-                    <StyledTableCell component="th" scope="row">{row.name}</StyledTableCell>
-                    <StyledTableCell align="right">{row.value}</StyledTableCell>
-                  </StyledTableRow>
+        <h2 className="text-xl font-bold mb-4">Product Information</h2>
+        <TableContainer component={Paper} style={{borderRadius:"10px"}}>
+          <Table sx={{ minWidth: 300 }} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                {productData.headingData.map((item, index) => (
+                  <StyledTableCell key={index} className=' bg-sky-950 bg-sky' colSpan={item.colspan}>{item.name}</StyledTableCell>
                 ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {productData.rowData.map((row, rowIndex) => (
+                <StyledTableRow key={rowIndex}>
+                  {row.map((cell, cellIndex) => (
+                    <StyledTableCell key={cellIndex} className='' colSpan={cell.colspan}>
+                      {cell.name}
+                    </StyledTableCell>
+                  ))}
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </section>
     </div>
   );

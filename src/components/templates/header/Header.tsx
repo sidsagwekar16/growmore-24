@@ -55,6 +55,11 @@ export const Header: React.FC = () => {
 
   return (
     <header className="flex flex-col bg-white shadow-md w-screen overflow-x-hidden">
+      <div className="w-screen flex h-[2px]">
+        <div className="bg-blue-600 h-full w-[33%]">-</div>
+        <div className="bg-red-600 h-full w-[33%]">-</div>
+        <div className="bg-blue-600 h-full w-[33%]">-</div>
+      </div>
       <div className="flex flex-col sm:flex-row sm:justify-center items-center px-8 border-b w-full">
         <img
           loading="lazy"
@@ -94,7 +99,7 @@ export const Header: React.FC = () => {
             ))}
           </ul>
         
-        <form className=" hidden relative sm:flex mx-4 sm:flex-row items-center border rounded-full px-2 w-full sm:w-auto">
+        <form className=" hidden relative mx-4 sm:flex-row items-center border rounded-full px-2 w-full sm:w-auto">
             <input
               type="search"
               placeholder="Search here"

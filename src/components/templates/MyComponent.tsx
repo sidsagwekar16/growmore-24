@@ -15,27 +15,28 @@ const SLIDES: Slide[] = [
     id: 1,
     imageUrl: 'https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/90ab530e859c6de6b5a1df5ee9a65d801d2055863836a3b2b225c057770ee6f7?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&',
     altText: 'Background Image 1',
-    heading:"Heading 1",
-    description:"Description 1",
-    text:"Text 1"
+    heading: "Tools that Power Your Harvest",
+    description: "Quality Accessories, Maximum Yield",
+    text: "Equip your farm with high-performance tools designed to simplify daily tasks and improve efficiency."
   },
   {
     id: 2,
     imageUrl: 'https://picsum.photos/seed/picsum/200/300',
     altText: 'Background Image 2',
-    heading:"Heading 2",
-    description:"Description 2",
-    text:"Text 2"
+    heading: "Gear Up for a Smarter Farm",
+    description: "Durable. Reliable. Essential.",
+    text: "Our farming accessories are built to withstand tough conditions, ensuring long-lasting performance with every use."
   },
   {
     id: 3,
     imageUrl: 'https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/90ab530e859c6de6b5a1df5ee9a65d801d2055863836a3b2b225c057770ee6f7?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&',
     altText: 'Background Image 3',
-    heading:"Heading 3",
-    description:"Description 3",
-    text:"Text 3"
+    heading: "Accessories Built for Every Field",
+    description: "From Soil to Success",
+    text: "Whether it's irrigation, hand tools, or protective gear — find everything you need to boost productivity and nurture your crops."
   },
 ];
+
 
 const MyComponent: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

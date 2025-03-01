@@ -38,7 +38,7 @@ export const Introduction: React.FC = () => {
       {/* Text Section */}
       <div className="flex flex-col items-start min-w-[240px] w-full max-md:max-w-full">
         <div className="text-2xl text-red-600">Our Introductions</div>
-        <h2 className="text-4xl font-extrabold leading-[58px] text-zinc-800 max-md:text-4xl max-md:leading-[54px]">
+        <h2 className="text-4xl font-extrabold leading-9 text-zinc-800 max-md:text-4xl max-md:leading-[54px]">
           Grounded in Heritage <br />
           Cultivating for <br />
           Tomorrow
@@ -71,7 +71,7 @@ export const Introduction: React.FC = () => {
         <button
           className="px-9 py-4 mt-6 text-md font-bold text-white bg-sky-800 rounded-xl max-md:px-5"
           tabIndex={0}
-          onClick={()=>navigate('/product-list')}
+          onClick={()=>navigate('/categories')}
         >
           Discover More
         </button>
