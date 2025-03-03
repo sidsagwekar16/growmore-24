@@ -88,7 +88,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
         </div>
 
         {/* Testimonial Section */}
-        <div className="w-full lg:w-[55%] flex justify-center">
+        <div className="w-full lg:w-[55%] flex justify-center mt-4 sm:mt-0">
           <article
             className="flex flex-col justify-center p-6 sm:p-10 bg-white rounded-3xl shadow-lg transition-all duration-300 ease-in-out min-h-[250px]"
             style={{

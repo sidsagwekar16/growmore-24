@@ -41,19 +41,19 @@ const ProductCard: React.FC<ProductProps> = ({
         alt={product_name}
         className="object-cover w-full h-48 rounded-t-2xl"
       />
-      <div className="flex flex-col flex-grow p-4">
+      <div className="flex flex-col flex-grow py-4">
         <h2 className="text-lg font-bold text-gray-900 truncate">{product_name}</h2>
         <p className="text-sm text-gray-600 truncate">{product_spec}</p>
       </div>
       </div>
-      <div className="flex gap-2 p-4">
+      <div className="flex gap-2 py-4">
         <button
-          className="flex-1 py-2 text-sm font-bold text-black border border-sky-800 rounded-lg hover:bg-sky-50"
+          className="flex-1 py-3 text-sm font-bold text-black border border-sky-800 rounded-lg hover:bg-sky-50"
           onClick={(e) => handleNavigate(e, product_name)}
         >
           View more
         </button>
-        <button className="flex-1 py-2 text-sm font-bold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
+        <button className="flex-1 py-3 text-sm font-bold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
           Enquire now
         </button>
       </div>
@@ -86,7 +86,7 @@ const ProductCatalog: React.FC = () => {
 
   return (
     <div className="flex flex-col bg-white min-h-screen">
-      <header className="flex justify-center items-center px-6 py-16 bg-gray-900 text-white text-center">
+      <header className="flex justify-center items-center px-6 py-24 bg-gray-900 text-white text-center">
         <h1 className="text-4xl font-extrabold sm:text-5xl md:text-6xl">OUR PRODUCTS</h1>
       </header>
       <main className="flex flex-col px-4 md:px-12 lg:px-24 w-full">

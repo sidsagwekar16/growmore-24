@@ -30,7 +30,7 @@ export const AboutPage: React.FC = () => {
           Grounded in Heritage
         </h1>
         <div className="flex  shrink-0 self-center mt-4 h-1 bg-sky-800 w-[191px]" />
-        <p className="self-center  mt-6 text-base leading-7 text-center max-w-[70%] text-zinc-500 max-md:max-w-full max-sm:w-4/5">
+        <p className="self-center  mt-6 text-base leading-7 text-justify sm:text-center max-w-[70%] text-zinc-500 max-md:max-w-full max-sm:w-4/5">
           Growmore Technologies Limited is a Zambian company specializing in
           agricultural machinery, with branches across Zambia and Malawi. As the
           sole distributors of Farmtrac tractors, we also offer agricultural

@@ -48,7 +48,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         loading="lazy"
         src={post.imageUrl}
         alt={post.title}
-        className="w-full h-64 object-cover rounded-2xl"
+        className="w-full h-64 lg:h-72 object-cover rounded-2xl"
       />
 
       {/* Blog Content */}

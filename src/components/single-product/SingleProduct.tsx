@@ -115,7 +115,7 @@ const SingleProduct = () => {
   return (
     <div className=''>
       <header className="flex justify-center items-center pt-28 pb-28 w-full bg-gray-900">
-        <h1 className="text-6xl font-extrabold text-white text-center">Category: {product}</h1>
+        <h1 className="text-3xl sm:text-6xl font-extrabold text-white text-center">{product}</h1>
       </header>
 
       <section className="w-[90vw] mx-auto py-10 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-10">
@@ -152,7 +152,9 @@ const SingleProduct = () => {
         </div>
       </section>
 
-      <section className="h-max my-[5vh] w-[87vw] mx-auto">
+      {
+        (productData.headingData!=0)?
+        <section className="h-max my-[5vh] w-[87vw] mx-auto">
         <h2 className="text-xl font-bold mb-4">Product Information</h2>
         <TableContainer component={Paper} style={{borderRadius:"10px"}}>
           <Table sx={{ minWidth: 300 }} aria-label="customized table">
@@ -177,6 +179,9 @@ const SingleProduct = () => {
           </Table>
         </TableContainer>
       </section>
+      :
+      null
+      }
     </div>
   );
 };

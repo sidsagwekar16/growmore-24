@@ -73,7 +73,7 @@ const MyComponent: React.FC = () => {
             <span className="text-white">{SLIDES[currentIndex].description}</span>
           </div>
         </div>
-        <div className="absolute right-10 top-1/2 transform -translate-y-1/2 flex flex-col gap-3">
+        <div className="hidden absolute right-10 top-1/2 transform -translate-y-1/2 sm:flex flex-col gap-3">
           {SLIDES.map((_, index) => (
             <button
               key={index}
@@ -82,7 +82,7 @@ const MyComponent: React.FC = () => {
             />
           ))}
         </div>
-        <div className="flex flex-col mt-11 ml-7 max-w-full w-[519px] max-md:mt-10">
+        <div className="flex flex-col ml-0 mt-11 sm:ml-7 max-w-full w-[519px] max-md:mt-10">
           <div className="text-base font-semibold text-white text-opacity-70 leading-8">
             {SLIDES[currentIndex].text}
           </div>

@@ -2,6 +2,7 @@ import * as React from "react";
 import { SocialIcon } from "./SocialIcon.tsx";
 import { ContactItem } from "./ContactItem.tsx";
 import { NavigationItem } from "./NavigationItem.tsx";
+import { Link } from "react-router-dom";
 
 const socialIcons = [
   {
@@ -61,12 +62,13 @@ export const Header: React.FC = () => {
         <div className="bg-blue-600 h-full w-[33%]">-</div>
       </div>
       <div className="flex flex-col sm:flex-row sm:justify-center items-center px-8 border-b w-full">
+        <Link to='/'>
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/998889ad56e68a6903a436c4461117a3a74997d246d8344238c85542850ca191?apiKey=0014938fb5fd4152961b843a94ff3203&"
           alt="Company logo"
           className="object-contain w-44 max-w-full mx-auto my-4 sm:mx-16"
-        />
+        /></Link>
 
         <div className="hidden lg:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2">
           <div className=" flex">
@@ -82,7 +84,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-screen flex  bg-white text-blue-950 border-sky-900 border-t-4 sm:border-none">
+      <div className=" flex  bg-white text-blue-950 border-sky-900 border-t-4 w-[97%] mx-auto sm:border-none">
         <button className=" sm:hidden tracking-wide text-center font-bold mx-auto text-md py-3" onClick={e=>setIsOpen(!isOpen)}>
           -- Menu --
         </button>

@@ -88,7 +88,7 @@ const AgricultureHero: React.FC = () => {
       <div className="relative w-full flex justify-center">
         <div className="absolute top-0 left-0 w-full h-full bg-white"></div>
         <div className="relative z-10 w-full max-w-5xl">
-          <div className="flex flex-wrap justify-center items-center gap-3.5 py-10 px-8 bg-sky-800 text-white rounded-xl shadow-lg mt-10 sm:mt-16">
+          <div className="hidden sm:flex flex-wrap justify-center items-center gap-3.5 py-10 px-8 bg-sky-800 text-white rounded-xl shadow-lg mt-10 sm:mt-16">
             {stats.map((stat, index) => (
               <React.Fragment key={stat.id}>
                 <div

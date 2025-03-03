@@ -35,7 +35,7 @@ const ProductCard: React.FC<ProductProps> = ({ image_url, name }) => {
         </div>
       </div>
       <button
-        className="w-full mt-4 py-2 text-md font-bold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors"
+        className="w-full mt-4 py-3 sm:py-4 text-md font-bold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors"
         onClick={(e) => handleNavigate(e, name)}
       >
         View More
