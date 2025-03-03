@@ -56,7 +56,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col px-3 py-16 md:px-8 lg:px-12 w-[90%] mx-auto">
+    <div className="flex flex-col px-3 pt-16 md:px-8 lg:px-12 w-[90%] mx-auto">
       <div className="text-left">
         <h3 className="text-red-600 text-xl font-medium">Contact</h3>
         <h1 className="text-4xl font-extrabold text-gray-800 sm:text-5xl">Contact Us</h1>

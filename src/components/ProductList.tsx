@@ -89,7 +89,7 @@ const ProductCatalog: React.FC = () => {
       <header className="flex justify-center items-center px-6 py-24 bg-gray-900 text-white text-center">
         <h1 className="text-4xl font-extrabold sm:text-5xl md:text-6xl">OUR PRODUCTS</h1>
       </header>
-      <main className="flex flex-col px-4 md:px-12 lg:px-24 w-full">
+      <main className="flex flex-col px-4 md:px-12 lg:px-24 w-[95%] mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-10">{name}</h2>
         <div className="h-1 mt-2 bg-sky-800 w-20 md:w-40" />
         <p className="mt-2 text-gray-500 max-w-2xl">{productDescription}</p>
