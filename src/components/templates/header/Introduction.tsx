@@ -4,7 +4,6 @@ import { IntroductionProps } from "./types";
 import introImage from '../header/elements.png'
 import { useNavigate } from "react-router-dom";
 
-
 const iconBlocks = [
   {
     iconSrc:
@@ -21,10 +20,9 @@ const iconBlocks = [
 ];
 
 export const Introduction: React.FC = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-2 gap-10 items-center px-32 py-32 max-md:grid-cols-1 max-md:px-5 max-md:py-24">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center px-5 sm:px-10 md:px-16 lg:px-32 py-16 sm:py-24 lg:py-32">
       {/* Image Section */}
       <div className="flex justify-center">
         <img
@@ -36,9 +34,9 @@ export const Introduction: React.FC = () => {
       </div>
 
       {/* Text Section */}
-      <div className="flex flex-col items-start min-w-[240px] w-full max-md:max-w-full">
+      <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full max-md:max-w-full">
         <div className="text-2xl text-red-600">Our Introductions</div>
-        <h2 className="text-4xl font-extrabold leading-9 text-zinc-800 max-md:text-4xl max-md:leading-[54px]">
+        <h2 className="text-3xl sm:text-4xl font-extrabold leading-9 text-zinc-800">
           Grounded in Heritage <br />
           Cultivating for <br />
           Tomorrow
@@ -57,7 +55,7 @@ export const Introduction: React.FC = () => {
 
         <div className="mt-6 bg-sky-800 h-1 w-full max-w-[635px]" />
 
-        <div className="flex flex-wrap gap-3.5 items-start mt-6">
+        <div className="flex flex-wrap justify-center lg:justify-start gap-3.5 items-start mt-6">
           {iconBlocks.map((block, index) => (
             <IconTextBlock
               key={index}
@@ -71,7 +69,7 @@ export const Introduction: React.FC = () => {
         <button
           className="px-9 py-4 mt-6 text-md font-bold text-white bg-sky-800 rounded-xl max-md:px-5"
           tabIndex={0}
-          onClick={()=>navigate('/categories')}
+          onClick={() => navigate('/categories')}
         >
           Discover More
         </button>
@@ -80,4 +78,4 @@ export const Introduction: React.FC = () => {
   );
 };
 
-export default Introduction; 
+export default Introduction;

@@ -8,10 +8,10 @@ const partnerLogos: PartnerLogoProps[] = Array(10).fill({
 
 export const PartnerSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center px-6 sm:px-12 lg:px-20 py-16 bg-white">
+    <div className="flex w-full flex-col items-center px-6 sm:px-12 lg:px-20 py-16 bg-white">
 
       {/* Desktop & Tablet Grid Layout */}
-      <div className="hidden sm:grid grid-cols-2 lg:grid-cols-5 gap-x-16 gap-y-10 w-full">
+      <div className="hidden sm:grid grid-cols-2 md:grid lg:grid-cols-5 gap-x-16 gap-y-10 w-full">
         {partnerLogos.map((logo, index) => (
           <div
             key={index}

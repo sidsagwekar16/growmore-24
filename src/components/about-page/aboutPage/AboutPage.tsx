@@ -60,7 +60,7 @@ export const AboutPage: React.FC = () => {
       />
 
       <section className="box-border flex relative flex-col shrink-0">
-        <div className="flex flex-col items-start mt-24 px-8 sm:ml-20 sm:px-12 max-w-full w-[223px] max-md:mt-10 max-md:ml-2.5">
+        <div className="flex flex-col items-start mt-24 px-8 sm:ml-20 md:ml-8 lg:ml-20 sm:px-12 max-w-full w-[223px] max-md:mt-10 max-md:ml-2.5">
           <h2 className="text-2xl text-red-600">Our Trusted</h2>
           <div className="text-5xl font-bold leading-tight text-zinc-800 max-md:text-4xl">
             Partners

@@ -63,7 +63,7 @@ export const Contact: React.FC = () => {
       </div>
       <div className="flex flex-col lg:flex-row sm:gap-10 mt-10 w-full items-center justify-center">
         <div
-          className="relative hidden h-[90vh]  sm:flex items-center justify-center w-[90vw] p-10 bg-cover bg-center text-white text-3xl font-semibold"
+          className="relative hidden h-[90vh]  lg:flex items-center justify-center w-[90vw] p-10 bg-cover bg-center text-white text-3xl font-semibold"
           style={{
             backgroundImage:
               "url(https://cdn.builder.io/api/v1/image/assets%2F0014938fb5fd4152961b843a94ff3203%2Fbd7e164c2c3348a58d32727968c5d2c4)",

@@ -106,9 +106,7 @@ const SingleProduct = () => {
         `https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/product/${product}`
       );
       const data = await response.json();
-      setProductData(data)
-      console.log("product data is",productData);
-      
+      setProductData(data)      
     } catch (error) {
       console.error("Error fetching data", error);
     }
