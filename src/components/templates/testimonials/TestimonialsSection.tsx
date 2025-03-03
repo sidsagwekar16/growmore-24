@@ -1,6 +1,5 @@
-"use client";
-import * as React from "react";
-import { useState } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 
 export interface TestimonialsSectionProps {}
 
@@ -16,16 +15,29 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
 
   const testimonials: Testimonial[] = [
     {
-      text: "Lorem ipsum dolor sit amet. Id laboriosam adipisci ab vitae quis ex mollitia harum.",
-      author: "John Smith",
-      avatar: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/1fdb8a6564745a8c43a21c54728a47efcb52abfca7bef3c23c5ef000f8a01f66?"
+      text: "The tractor I bought from FarmMachineryHub has transformed my farming operations. It's powerful and easy to use!",
+      author: "Steve Smith",
+      avatar: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png"
     },
     {
-      text: "Est tempora quasi id molestiae commodi aut nihil nulla eum labore deleniti.",
-      author: "Jane Doe",
-      avatar: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/81f6736f00171d0b49131a7f79c84d371928c45d2c6eb40999c0a3f8f5e4040f?"
+      text: "I was impressed by the quality and durability of the plow I purchased. My fields are now perfectly prepared for planting.",
+      author: "Tom Cruise",
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvlBlOJM_kUzWczQDxlorQPpsSaXqwNGqY5gcwDVHzt1saBEBiIbEIRhjC-xdKbZsg2Zw&usqp=CAU"
+    },
+    {
+      text: "The combine harvester from FarmMachineryHub has significantly increased my efficiency during harvest season. Highly recommend!",
+      author: "Peter Parker",
+      avatar: "https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369990.png"
     }
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleTestimonialChange("next");
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleTestimonialChange = (direction: "prev" | "next") => {
     setIsTransitioning(true);

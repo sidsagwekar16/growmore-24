@@ -68,7 +68,7 @@ export const Header: React.FC = () => {
           className="object-contain w-44 max-w-full mx-auto my-4 sm:mx-16"
         />
 
-        <div className="hidden lg:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="hidden lg:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2">
           <div className=" flex">
             {socialIcons.map((icon, index) => (
               <SocialIcon key={index} {...icon} />
