@@ -10,6 +10,9 @@ import "./App.css";
 import SingleProduct from "./components/single-product/SingleProduct.tsx";
 import PrivacyPolicy from "./components/privacy-policy/PrivacyPolicy.tsx";
 import Category from "./components/category/Category.tsx";
+import BlogPage from "./components/templates/blogs/blog/BlogPage.tsx";
+import SingleBlog from "./components/templates/blogs/blog/SingleBlog.tsx";
+import ContactPage from "./components/templates/contact-us/contact/ContactPage.tsx";
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
           <Route path="/product/:product" element={<SingleProduct/>} />
           <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
           <Route path="/categories" element={<Category/>} />
+          <Route path="/blog" element={<BlogPage/>} />
+          <Route path="/blog/:id" element={<SingleBlog/>} />
+          <Route path="/contact" element={<ContactPage/>} />
         </Routes>
       </main>
       <Footer /> {/* ✅ Footer is now directly inside App.js */}

@@ -53,7 +53,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
 
   return (
     <section className="flex flex-col items-center w-screen px-4 sm:px-8 lg:px-20 py-16 md:py-24 lg:py-32 bg-slate-400 bg-opacity-20">
-      <div className="max-w-screen-xl w-full flex flex-col lg:flex-row items-center justify-between relative">
+      <div className="max-w-screen-xl w-full flex flex-col gap-y-3 lg:flex-row items-center justify-between relative">
         {/* Heading Section */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-[40%]">
           <h2 className="text-2xl font-semibold text-sky-800">Our Testimonials</h2>
@@ -66,7 +66,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
         </div>
 
         {/* Navigation Buttons - Now Fixed and Centered */}
-        <div className="hidden lg:flex flex-col items-center gap-4 mr-5 w-[60px]">
+        <div className="hidden lg:flex flex-col items-center gap-4 mt-0 mr-5 w-[60px]">
           <button
             className="flex justify-center items-center bg-white h-12 w-12 rounded-full hover:bg-gray-100 transition focus:ring-2 focus:ring-sky-800 shadow-md rotate-90"
             onClick={() => handleTestimonialChange("prev")}

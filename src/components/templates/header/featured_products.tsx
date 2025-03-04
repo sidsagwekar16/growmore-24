@@ -104,12 +104,12 @@ const ProductCatalog: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen mb-10">
-      <main className="mt-24 w-full px-9">
-        <div className=" md:px-[7%]">
+      <main className="mt-24 md:px-[7%] w-full px-9">
+        <div>
           <h3 className="text-2xl text-red-600">Explore More</h3>
           <h1 className="text-5xl font-extrabold text-zinc-800 mt-2">Products</h1>
         </div>
-        <section className="mt-10 lg:px-[7%]" aria-label="Product listing">
+        <section className="mt-10" aria-label="Product listing">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {products.map((product, index) => (
               <div className="h-full" key={index}>

@@ -23,10 +23,10 @@ const ProductCard: React.FC<ProductProps> = ({ image_url, name }) => {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="flex flex-col border rounded-3xl w-full aspect-[4/5] overflow-hidden"> 
+      <div className="flex flex-col border rounded-3xl w-full aspect-[5/5] overflow-hidden"> 
         <img
           loading="lazy"
-          src={image_url || DEFAULT_IMAGE}
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
           alt={name || "Product"}
           className="object-cover w-full h-3/5"
         />

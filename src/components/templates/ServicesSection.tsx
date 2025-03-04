@@ -6,13 +6,15 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ imageUrl, imageAlt }) => (
-  <div className="flex flex-col w-full bg-transparent rounded-lg overflow-hidden">
-    <img
-      loading="lazy"
-      src={imageUrl}
-      alt={imageAlt}
-      className="object-cover w-full h-auto rounded-lg"
-    />
+  <div className="w-full">
+    <div className="relative overflow-hidden rounded-lg  ">
+      <img
+        loading="lazy"
+        src={imageUrl}
+        alt={imageAlt}
+        className="w-full h-48 md:h-64 lg:h-72 objectfill rounded-lg"
+      />
+    </div>
   </div>
 );
 
@@ -55,7 +57,8 @@ const ServicesSection: React.FC = () => {
           What We Offer
         </h3>
       </div>
-      <div className="flex flex-wrap justify-center gap-6 w-full max-w-6xl lg:flex-nowrap">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl">
         {services.map((service, index) => (
           <ServiceCard key={index} imageUrl={service.imageUrl} imageAlt={service.imageAlt} />
         ))}

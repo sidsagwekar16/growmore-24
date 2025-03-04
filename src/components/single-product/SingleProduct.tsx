@@ -118,39 +118,39 @@ const SingleProduct = () => {
         <h1 className="text-3xl sm:text-6xl font-extrabold text-white text-center">{product}</h1>
       </header>
 
-      <section className="w-[90vw] mx-auto py-10 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-10">
-        {/* Product Information Section */}
-        <div className="sm:w-2/3 w-full p-6 rounded-lg">
-          <h2 className="text-5xl font-bold text-zinc-800 max-md:text-4xl text-center sm:text-left">
-            {product}
-          </h2>
-          <div className="h-1 mt-4 bg-sky-800 w-48 mx-auto sm:mx-0" />
-          <p className="mt-6 text-base leading-7 text-zinc-500 text-center sm:text-left">
-          {productData.short_description}
-          </p>
-          
-          {/* Main Product Image */}
-          <div className="mt-6">
-            <img 
-              src={productData.images[0]}
-              alt="Product" 
-              className="w-full rounded-lg shadow-md" 
-            />
-          </div>
-          
-          {/* Thumbnail Images */}
-          <div className="hidden sm:flex mt-4 justify-center sm:justify-start space-x-4">
-            <img src={productData.images[1]} alt="Thumbnail 1" className="h-20 rounded-lg shadow-md cursor-pointer" />
-            <img src={productData.images[1]} alt="Thumbnail 2" className="h-20 rounded-lg shadow-md cursor-pointer" />
-            <img src={productData.images[1]} alt="Thumbnail 3" className="h-20 rounded-lg shadow-md cursor-pointer" />
-          </div>
-        </div>
-        
-        {/* Tabs Section */}
-        <div className="sm:w-1/3 w-full my-auto h-max sm:h-[80vh] bg-gray-100 p-6 rounded-lg shadow-md">
-          <BasicTabs features={productData.features} description={productData.description}/>
-        </div>
-      </section>
+      <section className="w-[90vw] mx-auto py-10 flex flex-col md:flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
+  {/* Product Information Section */}
+  <div className="lg:w-2/3 w-full p-6 rounded-lg">
+    <h2 className="text-5xl font-bold text-zinc-800 max-md:text-4xl text-center lg:text-left">
+      {product}
+    </h2>
+    <div className="h-1 mt-4 bg-sky-800 w-48 mx-auto lg:mx-0" />
+    <p className="mt-6 text-base leading-7 text-zinc-500 text-center lg:text-left">
+      {productData.short_description}
+    </p>
+
+    {/* Main Product Image */}
+    <div className="mt-6">
+      <img 
+        src={productData.images[1] ? productData.images[1] : "https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"}
+        alt="Product" 
+        className="w-full rounded-lg shadow-md" 
+      />
+    </div>
+
+     <div className="hidden sm:flex mt-4 justify-center sm:justify-start space-x-4">
+       <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 1" className="h-20 rounded-lg shadow-md cursor-pointer" />
+       <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 2" className="h-20 rounded-lg shadow-md cursor-pointer" />
+       <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 3" className="h-20 rounded-lg shadow-md cursor-pointer" />
+      </div>
+    </div>
+
+  {/* Tabs Section */}
+  <div className="w-full lg:w-1/3 lg:h-[90vh] lg:mt-6 h-max bg-gray-100 p-6 rounded-lg shadow-md">
+    <BasicTabs features={productData.features} description={productData.description} />
+  </div>
+</section>
+
 
       {
         (productData.headingData!=0)?
@@ -169,7 +169,7 @@ const SingleProduct = () => {
               {productData.rowData.map((row, rowIndex) => (
                 <StyledTableRow key={rowIndex}>
                   {row.map((cell, cellIndex) => (
-                    <StyledTableCell key={cellIndex} colSpan={cell.colspan}>
+                    <StyledTableCell key={cellIndex} align={cellIndex==0? "left":"center"} colSpan={cell.colspan} className='border-2'>
                       {cell.name}
                     </StyledTableCell>
                   ))}
