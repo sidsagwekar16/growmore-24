@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-auto bg-white overflow-hidden">
+    <div className="flex flex-col h-auto bg-white overflow-hidden ">
       <div className=" rounded-2xl">
       <img
         loading="lazy"
@@ -53,9 +53,11 @@ const ProductCard: React.FC<ProductProps> = ({
         >
           View more
         </button>
-        <button className="flex-1 py-3 text-sm font-bold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
-          Enquire now
-        </button>
+        <div className="flex-1 hidden lg:block">
+          <button className="w-full py-3 text-sm font-bold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
+            Enquire now
+          </button>
+        </div>
       </div>
     </div>
   );
