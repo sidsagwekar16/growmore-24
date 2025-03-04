@@ -3,8 +3,12 @@ import { QuickLink } from "./QuickLink.tsx";
 import { NewsletterInput } from "./NewsletterInput.tsx";
 import { FooterLink } from "./FooterLink.tsx";
 
-const quickLinks = ["About Us", "Blogs", "Contact"];
-const footerLinks = ["Privacy Policy"];
+const quickLinks = [
+  { text: "About Us", navLink: "/about" },
+  { text: "Blogs", navLink: "/blog" },
+  { text: "Contact", navLink: "/contact" }
+];
+const footerLinks = [{ text: "Privacy Policy", navLink: "/privacy-policy" }];
 
 export const Footer: React.FC = () => {
   return (
@@ -34,7 +38,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="flex flex-col sm:mt-4 text-base text-zinc-700">
             {quickLinks.map((link, index) => (
-              <QuickLink key={index} text={link} />
+              <QuickLink key={index} text={link.text} navLink={link.navLink} />
             ))}
           </div>
         </div>
@@ -53,7 +57,7 @@ export const Footer: React.FC = () => {
         </div>
         <div className="flex gap-10 items-start self-stretch my-auto text-right min-w-[240px]">
           {footerLinks.map((link, index) => (
-            <FooterLink text={link}/>
+            <FooterLink key={index} text={link.text} navLink={link.navLink} />
           ))}
         </div>
       </div>
