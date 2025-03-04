@@ -8,7 +8,7 @@ interface FooterLinkProps {
 export const FooterLink: React.FC<FooterLinkProps> = ({ text}) => (
   <Link 
     to="/privacy-policy"
-    className="text-right text-gray-600 hover:text-gray-900 transition-colors"
+    className="text-right font-manrope text-gray-600 hover:text-gray-900 transition-colors"
   >
     {text}
   </Link>

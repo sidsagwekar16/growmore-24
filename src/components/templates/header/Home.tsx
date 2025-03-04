@@ -16,7 +16,7 @@ const Home = () => {
         <ProductCatalog/>
         <ServicesSection /> 
         <AgricultureHero />
-        <TestimonialsSection /> 
+        <TestimonialsSection />  
         <Contact />
         <BlogSection />
 

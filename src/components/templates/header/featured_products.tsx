@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductProps> = ({
   };
 
   return (
-    <div className="flex flex-col w-full h-full lg:max-w-[90%]">
+    <div className="flex flex-col w-full h-full lg:max-w-[90%] font-manrope">
       <article className="bg-neutral-50 border border-solid border-zinc-200 rounded-3xl overflow-hidden h-full flex flex-col">
         <img
           loading="lazy"
@@ -50,7 +50,7 @@ const ProductCard: React.FC<ProductProps> = ({
           <p className="text-sm text-zinc-600">Tags: {tags.length ? tags.join(", ") : "No tags"}</p>
         </div>
       </article>
-      <div className="flex gap-2 py-4">
+      <div className="flex gap-2 py-4 font-manrope">
         <button
           className="flex-1 py-3 text-sm font-bold text-black border border-sky-800 rounded-lg hover:bg-sky-50"
           onClick={(e) => handleNavigate(e, category)}
@@ -108,8 +108,8 @@ const ProductCatalog: React.FC = () => {
     <div className="bg-white min-h-screen mb-10">
       <main className="mt-24 md:px-[7%] w-full px-9">
         <div>
-          <h3 className="text-2xl text-red-600">Explore More</h3>
-          <h1 className="text-5xl font-extrabold text-zinc-800 mt-2">Products</h1>
+          <h3 className="text-2xl text-red-600 font-covered">Explore More</h3>
+          <h1 className="text-5xl font-semibold text-zinc-800 mt-2 font-manrope">Products</h1>
         </div>
         <section className="mt-10" aria-label="Product listing">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

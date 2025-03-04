@@ -56,11 +56,11 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
       <div className="max-w-screen-xl w-full flex flex-col gap-y-3 lg:flex-row items-center justify-between relative">
         {/* Heading Section */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-[40%]">
-          <h2 className="text-2xl font-semibold text-sky-800">Our Testimonials</h2>
-          <h3 className="mr-4 mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-zinc-800">
+          <h2 className="text-2xl font-semibold text-sky-800 font-covered">Our Testimonials</h2>
+          <h3 className="mr-4 mt-4 text-3xl sm:text-4xl lg:text-5xl font-manrope font-semibold leading-tight text-zinc-800">
             What They're Talking About
           </h3>
-          <p className="mr-4 mt-4 text-base sm:text-lg text-neutral-600">
+          <p className="mr-4 mt-4 text-base sm:text-lg text-neutral-600 font-manrope">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum justo eget nisi fermentum.
           </p>
         </div>
@@ -99,11 +99,11 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
           >
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
               <div className="text-center sm:text-left flex-1">
-                <p className="text-base sm:text-lg text-neutral-600">
+                <p className="text-base sm:text-lg text-neutral-600 font-manrope">
                   {testimonials[currentTestimonialIndex].text}
                 </p>
                 <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start mt-6">
-                  <p className="text-lg sm:text-2xl font-extrabold text-stone-900">
+                  <p className="text-lg sm:text-2xl font-manrope font-semibold text-stone-900">
                     {testimonials[currentTestimonialIndex].author}
                   </p>
                 </div>

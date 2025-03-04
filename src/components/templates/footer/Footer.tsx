@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             alt="Company logo"
             className="object-contain max-w-full w-[214px]"
           />
-          <div className="self-stretch sm:mt-4">
+          <div className="self-stretch font-manrope sm:mt-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           </div>
           <img
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col sm:mt-1">
-          <div className="text-xl font-extrabold leading-none text-zinc-800">
+          <div className="text-xl font-manrope font-semibold leading-none text-zinc-800">
             Quick links
           </div>
           <div className="flex flex-col sm:mt-4 text-base text-zinc-700">
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col min-w-[240px] w-[373px]">
-          <div className="text-xl mt-3 sm:mt-0 font-extrabold leading-none text-zinc-800">
+          <div className="text-xl mt-3 sm:mt-0 font-manrope font-semibold leading-none text-zinc-800">
             Get Newsletters
           </div>
           <NewsletterInput placeholder="Your email address" />
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-wrap gap-4 sm:gap-10 justify-between items-center py-4 w-full text-sm border-t border-solid border-t-gray-400 text-zinc-700 mx-auto">
-        <div className="self-stretch my-auto">
+        <div className="self-stretch my-auto font-manrope ">
           All rights reserved @Growmoreweb
         </div>
         <div className="flex gap-10 items-start self-stretch my-auto text-right min-w-[240px]">

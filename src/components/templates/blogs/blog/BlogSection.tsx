@@ -43,8 +43,8 @@ export function BlogSection() {
   return (
     <div className="flex flex-col py-32 px-[8%] w-full max-md:px-5 max-md:py-24 max-md:max-w-full">
       <div className="flex flex-col items-left max-w-full text-left">
-        <div className="text-2xl font-medium text-sky-800">From the Blog</div>
-        <div className="mt-2 text-5xl font-extrabold leading-tight text-stone-900 max-md:text-4xl">
+        <div className="text-2xl font-covered text-sky-800">From the Blog</div>
+        <div className="mt-2 text-5xl font-manrope font-semibold leading-tight text-stone-900 max-md:text-4xl">
           News & Articles
         </div>
       </div>

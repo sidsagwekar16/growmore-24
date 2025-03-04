@@ -26,9 +26,9 @@ const ProductCard: React.FC<ProductProps> = ({ image_url, name }) => {
           loading="lazy"
           src={image_url || DEFAULT_IMAGE}
           alt={name || "Product"}
-          className="object-cover w-full h-60 border rounded-3xl"
+          className="object-cover w-full h-60 rounded-3xl"
         />
-        <div className="flex items-center justify-center p-2 bg-white">
+        <div className="flex items-center justify-center p-2 bg-white ">
           <p className="text-lg font-bold text-center">{name}</p>
         </div>
       </div>
@@ -69,7 +69,7 @@ const Category: React.FC = () => {
       </header>
       <main className="flex flex-col items-center w-[90%] lg:w-[80%] mx-auto px-6 py-10">
         <section className="w-full" aria-label="Product listing">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}

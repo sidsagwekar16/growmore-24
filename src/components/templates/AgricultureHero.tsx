@@ -54,7 +54,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit }) => {
         onSubmit={handleSubmit}
         className="flex w-full sm:w-[373px] gap-2 py-1 pr-2 pl-5 mt-10 bg-white border border-solid border-zinc-800 rounded-[30px] shadow-md"
       >
-        <label htmlFor="email" className="sr-only">
+        <label htmlFor="email" className="sr-only font-manrope font-semibold">
           Your email address
         </label>
         <input
@@ -63,13 +63,13 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit }) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Your email address"
-          className="flex-1 py-3 text-zinc-500 bg-transparent border-none outline-none"
+          className="flex-1 py-3 font-semibold text-zinc-500 bg-transparent border-none outline-none"
           required
           aria-label="Email address input field"
         />
         <button
           type="submit"
-          className="px-6 py-1 font-bold text-white bg-sky-800 rounded-[29px] transition duration-300 hover:bg-sky-700"
+          className="px-6 py-1 font-semibold text-white bg-sky-800 rounded-[29px] transition duration-300 hover:bg-sky-700"
           aria-label="Join Now"
           disabled={loading}
         >
@@ -85,7 +85,7 @@ const AgricultureHero: React.FC = () => {
   return ( 
     <main className="flex flex-col items-center overflow-hidden bg-white">
       {/* Blue Box Section - With White Background Outside */}
-      <div className="relative w-full flex justify-center">
+      <div className="relative w-full flex justify-center font-manrope">
         <div className="absolute top-0 left-0 w-full h-full bg-white"></div>
         <div className="relative z-10 w-full max-w-5xl">
           <div className="hidden sm:flex flex-wrap justify-center items-center gap-3.5 py-10 px-8 bg-sky-800 text-white rounded-xl shadow-lg mt-10 sm:mt-16">
@@ -118,8 +118,8 @@ const AgricultureHero: React.FC = () => {
         aria-label="Agriculture Hero Section"
       >
         {/* Hero Text */}
-        <div className="text-center mt-16 sm:mt-40 px-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight">
+        <div className="text-center mt-16 font-manrope font-semibold sm:mt-40 px-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl leading-tight">
             Be a part of the farming transformation
           </h1>
           <p className="mt-4 text-lg sm:text-2xl sm:mt-10">

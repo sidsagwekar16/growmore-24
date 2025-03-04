@@ -16,11 +16,11 @@ export const InputField: React.FC<InputFieldProps & { icon?: React.ReactNode }> 
     <div className="flex flex-col my-2 w-full max-md:max-w-full">
       <label
         htmlFor={inputId}
-        className="text-base font-medium leading-loose text-gray-600"
+        className="text-base font-manrope leading-loose text-gray-600"
       >
         {label}
       </label>
-      <div className="flex items-center gap-2 border border-gray-300 rounded-xl px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-sky-500">
+      <div className="flex items-center font-manrope gap-2 border border-gray-300 rounded-xl px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-sky-500">
         {icon}
         <input
           id={inputId}

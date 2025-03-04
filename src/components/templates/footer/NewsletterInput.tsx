@@ -38,13 +38,13 @@ export const NewsletterInput: React.FC<NewsletterInputProps> = ({
   
   return(
   <form className="flex flex-col mt-3 sm:mt-6 w-full text-base max-w-[373px]" onSubmit={e=>handleSubmit(e)}>
-    <label htmlFor="emailInput" className="text-zinc-700">
+    <label htmlFor="emailInput" className="text-zinc-700 font-manrope">
       Get daily updates by subscribing
     </label>
     <input
       id="emailInput"
       type="email"
-      className="flex-1 shrink gap-2 self-stretch p-3 mt-3 w-full border border-solid rounded-md border-zinc-800 min-h-[48px] text-zinc-400"
+      className="flex-1 shrink gap-2 font-manrope self-stretch p-3 mt-3 w-full border border-solid rounded-md border-zinc-800 min-h-[48px] text-zinc-400"
       placeholder={placeholder}
       onChange={e=>setEmail(e.target.value)}
       aria-label="Email subscription input"
@@ -52,7 +52,7 @@ export const NewsletterInput: React.FC<NewsletterInputProps> = ({
     {message && <p className="text-sm text-black mt-2">{message}</p>}
     <button
       type="submit"
-      className="gap-2 self-start px-6 py-4 mt-6 text-sm text-center text-white rounded-md bg-sky-800 min-h-[48px] max-md:px-5 hover:bg-sky-700"
+      className="gap-2 self-start font-manrope px-6 py-4 mt-6 text-sm text-center text-white rounded-md bg-sky-800 min-h-[48px] max-md:px-5 hover:bg-sky-700"
     >
       Get To Know Me
     </button>

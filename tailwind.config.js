@@ -5,14 +5,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        CoveredByYourGrace : ["Covered By Your Grace", "cursive"]
+      fontFamily: {
+        covered: ["Covered By Your Grace", "cursive"],
+        manrope: ["Manrope", "sans-serif"],
       },
-      fontWeight:{
-        normal:400
-      }
+      fontWeight: {
+        thin: 200,
+        normal: 400,
+        bold: 800,
+      },
     },
   },
   plugins: [],
 }
-

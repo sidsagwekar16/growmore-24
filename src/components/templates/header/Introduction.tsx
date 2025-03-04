@@ -35,14 +35,14 @@ export const Introduction: React.FC = () => {
 
       {/* Text Section */}
       <div className="flex flex-col items-center lg:items-start xl-lg:px-[20%] sm:items-start lg:text-left w-[90%]">
-        <div className="text-2xl text-red-600 w-full">Our Introductions</div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold leading-9 text-zinc-800">
+        <div className="text-2xl text-red-600 w-full font-covered">Our Introductions</div>
+        <h2 className="text-3xl font-manrope font-semibold sm:text-4xl font-bold leading-9 text-zinc-800">
           Grounded in Heritage <br />
           Cultivating for <br />
           Tomorrow
         </h2>
 
-        <p className="mt-6 text-justify text-base leading-7 text-zinc-500">
+        <p className="mt-6 font-manrope text-justify text-base leading-7 text-zinc-500">
           Growmore Technologies Limited is a Zambian company specializing in
           agricultural machinery, with branches across Zambia and Malawi. As the
           sole distributors of Farmtrac tractors, we also offer agricultural
@@ -55,7 +55,7 @@ export const Introduction: React.FC = () => {
 
         <div className="mt-6 bg-sky-800 h-1 w-full max-w-[635px]" />
 
-        <div className="flex flex-wrap justify-center lg:justify-start gap-3.5 items-start mt-6">
+        <div className="flex flex-wrap justify-center font-manrope font-semibold lg:justify-start gap-3.5 items-start mt-6">
           {iconBlocks.map((block, index) => (
             <IconTextBlock
               key={index}
@@ -67,7 +67,7 @@ export const Introduction: React.FC = () => {
         </div>
 
         <button
-          className="px-9 py-4 mt-6 text-md font-bold text-white bg-sky-800 rounded-xl max-md:px-5"
+          className="px-9 py-4 font-manrope  mt-6 text-md font-bold text-white bg-sky-800 rounded-xl max-md:px-5"
           tabIndex={0}
           onClick={() => navigate('/categories')}
         >

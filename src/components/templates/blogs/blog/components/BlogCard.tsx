@@ -42,7 +42,7 @@ export function BlogSlider({ posts }: BlogSliderProps) {
 
 export function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <div className="flex flex-col bg-white overflow-hidden sm:w-full">
+    <div className="flex flex-col font-manrope bg-white overflow-hidden sm:w-full">
       {/* Blog Image */}
       <img
         loading="lazy"
@@ -53,8 +53,8 @@ export function BlogCard({ post }: { post: BlogPost }) {
 
       {/* Blog Content */}
       <div className="py-6 px-0">
-        <p className="text-sm text-sky-700 font-medium">{post.category}</p>
-        <h3 className="mt-2 text-lg md:text-xl font-bold text-gray-900">{post.title}</h3>
+        <p className="text-sm text-black">{post.category}</p>
+        <h3 className="mt-2 text-lg md:text-xl font-semibold text-gray-900">{post.title}</h3>
         <p className="mt-2 text-sm md:text-base text-gray-700">{post.description}</p>
 
         {/* Blog Meta Information */}

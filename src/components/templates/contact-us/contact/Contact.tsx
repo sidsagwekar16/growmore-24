@@ -58,8 +58,8 @@ export const Contact: React.FC = () => {
   return (
     <div className="flex flex-col px-3 pt-16 md:px-8 lg:px-12 w-[90%] mx-auto">
       <div className="text-left">
-        <h3 className="text-red-600 text-xl font-medium">Contact</h3>
-        <h1 className="text-4xl font-extrabold text-gray-800 sm:text-5xl">Contact Us</h1>
+        <h3 className="text-red-600 text-xl font-covered">Contact</h3>
+        <h1 className="text-4xl text-gray-800 sm:text-5xl font-manrope font-semibold">Contact Us</h1>
       </div>
       <div className="flex flex-col lg:flex-row sm:gap-10 mt-10 w-full items-center justify-center">
         <div
@@ -70,7 +70,7 @@ export const Contact: React.FC = () => {
           }}
         >
           <div className="absolute inset-0 rounded-xl"></div>
-          <div className="relative py-6 pr-6 pl-52 -mt-72 -mr-52 bg-amber-300 text-white text-md text-left rounded-lg ">
+          <div className="relative py-6 pr-6 pl-52 -mt-72 -mr-52 font-covered bg-amber-300 text-white text-md text-left rounded-lg ">
             <p>
               Agriculture
               <br />

@@ -31,7 +31,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         value={formData.name}
         onChange={(value) => onFieldChange("name", value)}
         required
-        icon={<FiUser className="text-gray-500 text-lg" />}
+        icon={<FiUser className="text-gray-500 text-lg font-manrope" />}
       />
 
       <InputField
@@ -41,7 +41,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         value={formData.email}
         onChange={(value) => onFieldChange("email", value)}
         required
-        icon={<MdOutlineEmail className="text-gray-500 text-lg" />}
+        icon={<MdOutlineEmail className="text-gray-500 text-lg font-manrope" />}
       />
 
       <InputField
@@ -57,7 +57,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
       <div className="flex flex-col w-full">
         <label
           htmlFor="message-input"
-          className="text-base font-medium text-gray-600"
+          className="text-base font-medium text-gray-600 font-manrope"
         >
           Message
         </label>
@@ -75,7 +75,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="flex justify-center mt-6 px-5 py-3 w-full text-lg font-semibold text-white bg-sky-800 rounded-xl shadow-sm transition-opacity duration-200 hover:bg-sky-700 disabled:opacity-70 disabled:cursor-not-allowed"
+        className="flex justify-center mt-6 px-5 py-3 w-full font-manrope text-lg text-white bg-sky-800 rounded-xl shadow-sm transition-opacity duration-200 hover:bg-sky-700 disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Submitting..." : "Send Message"} <span className=" my-auto mx-2"><MdOutlineKeyboardArrowRight/></span>
       </button>
