@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductProps> = ({
   };
 
   return (
-    <div className="flex flex-col w-full h-full max-w-[17vw]">
+    <div className="flex flex-col w-full h-full lg:max-w-[90%]">
       <article className="bg-neutral-50 border border-solid border-zinc-200 rounded-3xl overflow-hidden h-full flex flex-col">
         <img
           loading="lazy"
@@ -50,17 +50,19 @@ const ProductCard: React.FC<ProductProps> = ({
           <p className="text-sm text-zinc-600">Tags: {tags.length ? tags.join(", ") : "No tags"}</p>
         </div>
       </article>
-      <div className="flex justify-between gap-2 py-4">
-          <button
-            className="flex-1 py-4 text-md font-bold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors"
-            onClick={(e) => handleNavigate(e, category)}
-          >
-            View more
-          </button>
-          <button className="flex-1 py-4 text-md font-bold text-white bg-sky-800 rounded-xl hover:bg-sky-700 transition-colors">
+      <div className="flex gap-2 py-4">
+        <button
+          className="flex-1 py-3 text-sm font-bold text-black border border-sky-800 rounded-lg hover:bg-sky-50"
+          onClick={(e) => handleNavigate(e, category)}
+        >
+          View more
+        </button>
+        <div className="flex-1 hidden lg:block">
+          <button className="w-full py-3 text-sm font-bold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
             Enquire now
           </button>
         </div>
+      </div>
     </div>
   );
 };

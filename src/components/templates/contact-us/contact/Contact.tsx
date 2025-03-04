@@ -80,12 +80,14 @@ export const Contact: React.FC = () => {
             </p>
           </div>
         </div>
+        <div className=" w-[90vw] sm:w-[80vw]">
         <ContactForm
           formData={formData}
           isSubmitting={isSubmitting}
           onSubmit={handleSubmit}
           onFieldChange={handleFieldChange}
         />
+        </div>
       </div>
     </div>
   );

@@ -57,9 +57,9 @@ export const Header: React.FC = () => {
   return (
     <header className="flex flex-col bg-white shadow-md w-screen overflow-x-hidden">
       <div className="w-screen flex h-[2px]">
-        <div className="bg-blue-600 h-full w-[33%]">-</div>
-        <div className="bg-red-600 h-full w-[33%]">-</div>
-        <div className="bg-blue-600 h-full w-[33%]">-</div>
+        <div className="bg-blue-600 h-full w-[33%]"></div>
+        <div className="bg-red-600 h-full w-[33%]"></div>
+        <div className="bg-blue-600 h-full w-[33%]"></div>
       </div>
       <div className="flex flex-col sm:flex-row sm:justify-center items-center px-8 border-b w-full">
         <Link to='/'>

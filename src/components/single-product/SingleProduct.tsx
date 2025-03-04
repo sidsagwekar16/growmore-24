@@ -138,7 +138,7 @@ const SingleProduct = () => {
       />
     </div>
 
-     <div className="hidden sm:flex mt-4 justify-center sm:justify-start space-x-4">
+     <div className="hidden lg:flex mt-4 justify-center sm:justify-start space-x-4">
        <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 1" className="h-20 rounded-lg shadow-md cursor-pointer" />
        <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 2" className="h-20 rounded-lg shadow-md cursor-pointer" />
        <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 3" className="h-20 rounded-lg shadow-md cursor-pointer" />
