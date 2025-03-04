@@ -42,19 +42,19 @@ const ProductCard: React.FC<ProductProps> = ({
         className="object-cover w-full h-48 rounded-t-2xl"
       />
       <div className="flex flex-col flex-grow py-4">
-        <h2 className="text-lg font-bold text-gray-900 truncate">{product_name}</h2>
-        <p className="text-sm text-gray-600 truncate">{product_spec}</p>
+        <h2 className="text-lg font-manrope font-semibold text-gray-900 truncate">{product_name}</h2>
+        <p className="text-sm font-manrope text-gray-600 truncate">{product_spec}</p>
       </div>
       </div>
       <div className="flex gap-2 py-4">
         <button
-          className="flex-1 py-3 text-sm font-bold text-black border border-sky-800 rounded-lg hover:bg-sky-50"
+          className="flex-1 py-3 text-sm font-manrope font-semibold text-black border border-sky-800 rounded-lg hover:bg-sky-50"
           onClick={(e) => handleNavigate(e, product_name)}
         >
           View more
         </button>
         <div className="flex-1 hidden lg:block">
-          <button className="w-full py-3 text-sm font-bold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
+          <button className="w-full py-3 text-sm font-manrope font-semibold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
             Enquire now
           </button>
         </div>
@@ -89,12 +89,12 @@ const ProductCatalog: React.FC = () => {
   return (
     <div className="flex flex-col bg-white min-h-screen">
       <header className="flex justify-center items-center px-6 py-24 bg-gray-900 text-white text-center">
-        <h1 className="text-4xl font-extrabold sm:text-5xl md:text-6xl">OUR PRODUCTS</h1>
+        <h1 className="text-4xl font-manrope font-semibold sm:text-5xl md:text-6xl">OUR PRODUCTS</h1>
       </header>
       <main className="flex flex-col px-4 md:px-12 lg:px-24 w-[95%] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-10">{name}</h2>
+        <h2 className="text-3xl md:text-4xl font-manrope font-semibold text-gray-800 mt-10">{name}</h2>
         <div className="h-1 mt-2 bg-sky-800 w-20 md:w-40" />
-        <p className="mt-2 text-gray-500 max-w-2xl">{productDescription}</p>
+        <p className="mt-2 font-manrope text-gray-500 max-w-2xl">{productDescription}</p>
         <section className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
           {products.map((product, index) => (
             <ProductCard key={index} {...product} />

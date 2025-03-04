@@ -56,7 +56,7 @@ const BasicTabs = ({ features, description }) => {
           <Tab label="Features" {...a11yProps(1)} sx={{ width: "48%", marginX: "1%", color: 'black', borderRadius: '.4rem', '&.Mui-selected': { backgroundColor: "rgb(17 24 39)", color: 'white' } }} />
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>{features}</CustomTabPanel>
+      <CustomTabPanel value={value} index={0} >{features}</CustomTabPanel>
       <CustomTabPanel value={value} index={1}>{description}</CustomTabPanel>
     </Box>
   );
@@ -115,17 +115,17 @@ const SingleProduct = () => {
   return (
     <div className=''>
       <header className="flex justify-center items-center pt-28 pb-28 w-full bg-gray-900">
-        <h1 className="text-3xl sm:text-6xl font-extrabold text-white text-center">{product}</h1>
+        <h1 className="text-3xl sm:text-6xl font-manrope font-semibold text-white text-center">{product}</h1>
       </header>
 
       <section className="w-[90vw] mx-auto py-10 flex flex-col md:flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
       {/* Product Information Section */}
         <div className="lg:w-2/3 w-full p-6 rounded-lg">
-          <h2 className="text-5xl font-bold text-zinc-800 max-md:text-4xl text-center lg:text-left">
+          <h2 className="text-5xl font-manrope font-semibold text-zinc-800 max-md:text-4xl text-center lg:text-left">
             {product}
           </h2>
-          <div className="h-1 mt-4 bg-sky-800 w-48 mx-auto lg:mx-0" />
-          <p className="mt-6 text-base leading-7 text-zinc-500 text-center lg:text-left">
+          <div className="h-1 mt-2 bg-sky-800 w-48 mx-auto lg:mx-0" />
+          <p className="mt-3 text-base leading-7 font-manrope text-zinc-500 text-center lg:text-left">
             {productData.short_description}
           </p>
 
@@ -146,7 +146,7 @@ const SingleProduct = () => {
           </div>
 
         {/* Tabs Section */}
-        <div className="w-full lg:w-1/3 lg:h-[90vh] lg:mt-6 h-max bg-gray-100 p-6 rounded-lg shadow-md">
+        <div className="w-full font-manrope lg:w-1/3 lg:h-[90vh] lg:mt-6 h-max bg-gray-100 p-6 rounded-lg shadow-md ">
           <BasicTabs features={productData.features} description={productData.description} />
         </div>
       </section>
@@ -155,7 +155,7 @@ const SingleProduct = () => {
       {
         (productData.headingData!=0)?
         <section className="h-max my-[5vh] w-[87vw] mx-auto">
-        <h2 className="text-xl font-bold mb-4">Product Information</h2>
+        <h2 className="text-xl font-manrope font-semibold mb-4">Product Information</h2>
         <TableContainer component={Paper} style={{borderRadius:"10px"}}>
           <Table sx={{ minWidth: 300 }} aria-label="customized table">
             <TableHead>

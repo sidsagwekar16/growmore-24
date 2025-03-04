@@ -16,10 +16,10 @@ export const ContactItem: React.FC<ContactItemProps> = ({
         className="object-contain shrink-0 aspect-square w-[30px]"
       />
       <div className="flex flex-col mr-5">
-        <div className="self-start text-md font-semibold leading-loose text-zinc-400">
+        <div className="self-start text-md font-manrope leading-loose text-zinc-400">
           {label}
         </div>
-        <div className="mt-1.5 py-1 text-md font-bold leading-none text-stone-900">
+        <div className="mt-1.5 py-1 text-md font-manrope font-semibold leading-none text-stone-900">
           {value}
         </div>
       </div>

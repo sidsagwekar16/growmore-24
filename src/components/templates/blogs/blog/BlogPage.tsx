@@ -22,7 +22,7 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-white">
         <header className="flex justify-center items-center pt-28 pb-28 w-full bg-gray-900">
-          <h1 className="text-3xl sm:text-6xl font-extrabold text-white text-center">Blogs</h1>
+          <h1 className="text-3xl sm:text-6xl font-manrope font-semibold text-white text-center">Blogs</h1>
         </header>
 
         <div className="max-w-7xl px-5 mx-auto md:px-10 lg:px-0 my-16">
@@ -31,9 +31,9 @@ const BlogPage = () => {
               <div key={post.id} className="rounded-xl overflow-hidden bg-white">
                 <img src={post.image} alt={post.title} className="w-full object-cover h-[30vh] sm:h-[40vh]" />
                 <div className="p-6">
-                  <p className="text-sm uppercase font-bold text-gray-500 mb-2">{post.category}</p>
-                  <h2 className="text-2xl font-semibold mb-3">{post.title}</h2>
-                  <p className="text-gray-700">{post.description}</p>
+                  <p className="text-sm uppercase font-manrope text-gray-500 mb-2">{post.category}</p>
+                  <h2 className="text-2xl font-manrope font-semibold mb-3">{post.title}</h2>
+                  <p className="text-gray-700 font-manrope">{post.description}</p>
                 </div>
               </div>
             ))}

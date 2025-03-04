@@ -14,10 +14,10 @@ export const IconTextBlock: React.FC<IconTextBlockProps> = ({
         alt={alt}
         className="object-contain shrink-0 w-16 aspect-square"
       />
-      <div className="text-xl font-extrabold leading-7 text-stone-900">
-        Lorem Ipsum<span className="font-bold">la</span>
+      <div className="text-xl font-semibold leading-7 text-stone-900">
+        Lorem Ipsum<span>la</span>
         <br />
-        <span className="font-bold">boriosam</span>
+        <span>boriosam</span>
       </div>
     </div>
   );

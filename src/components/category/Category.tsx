@@ -29,11 +29,11 @@ const ProductCard: React.FC<ProductProps> = ({ image_url, name }) => {
           className="object-cover w-full h-60 rounded-3xl"
         />
         <div className="flex items-center justify-center p-2 bg-white ">
-          <p className="text-lg font-bold text-center">{name}</p>
+          <p className="text-lg font-manrope font-semibold text-center">{name}</p>
         </div>
       </div>
       <button
-        className="w-full mt-4 pt-3 pb-2 text-md font-bold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors"
+        className="w-full mt-4 pt-3 pb-2 text-md font-manrope font-semibold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors"
         onClick={(e) => handleNavigate(e, name)}
       >
         View More
@@ -63,7 +63,7 @@ const Category: React.FC = () => {
   return (
     <div className="flex flex-col bg-white min-h-screen">
       <header className="flex justify-center items-center px-8 pt-20 pb-20 w-full bg-gray-900">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white text-center">
+        <h1 className="text-4xl md:text-6xl font-manrope font-semibold text-white text-center">
           OUR PRODUCTS
         </h1>
       </header>

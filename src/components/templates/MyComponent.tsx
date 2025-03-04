@@ -67,7 +67,7 @@ const MyComponent: React.FC = () => {
         className="absolute inset-0 object-cover w-screen h-full"
       />
       <div className="relative flex flex-col items-start max-w-full w-[1160px]">
-        <div className="ml-7 font-manrope font-semibold text-white uppercase max-md:ml-2.5">{SLIDES[currentIndex].heading}</div>
+        <div className="ml-7 font-manrope text-white uppercase max-md:ml-2.5">{SLIDES[currentIndex].heading}</div>
         <div className="flex flex-wrap justify-between w-full mt-12 max-md:mt-10">
           <div className="text-9xl text-amber-300 leading-[110px] max-md:text-4xl max-md:leading-10">
             <span className="text-white font-covered">{SLIDES[currentIndex].description}</span>
@@ -82,8 +82,8 @@ const MyComponent: React.FC = () => {
             />
           ))}
         </div>
-        <div className="flex flex-col ml-0 mt-11 sm:ml-7 max-w-full w-[519px] max-md:mt-10">
-          <div className="text-base font-manrope font-semibold text-white text-opacity-70 leading-8">
+        <div className="flex flex-col ml-0 mt-11 max-w-full w-[519px] max-md:mt-10">
+          <div className="text-base font-manrope text-white text-opacity-70 leading-8">
             {SLIDES[currentIndex].text}
           </div>
           <div className="flex gap-5 items-center mt-3.5">

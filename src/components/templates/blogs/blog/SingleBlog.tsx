@@ -34,11 +34,11 @@ const SingleBlog = () => {
       <div className=" w-[85%]">
         <img src={post.image} alt={post.title} className="w-full rounded-lg mb-6 h-[40vh] lg:h-[70vh]" />
         <div className="flex flex-col items-center text-center">
-          <p className="text-gray-600 font-medium">{post.author}</p>
-          <p className="text-gray-400 text-sm">{post.date} • {post.category}</p>
+          <p className="text-gray-600 font-manrope">{post.author}</p>
+          <p className="text-gray-400 text-sm font-manrope">{post.date} • {post.category}</p>
         </div>
-        <h1 className="text-3xl font-bold text-center mt-4 mb-6">{post.title}</h1>
-        <p className="text-gray-700 leading-7 text-justify">{post.content}</p>
+        <h1 className="text-3xl text-center mt-4 mb-6 font-manrope font-semibold">{post.title}</h1>
+        <p className="text-gray-700 leading-7 text-justify font-manrope">{post.content}</p>
       </div>
     </div>
   );

@@ -85,7 +85,7 @@ export const Header: React.FC = () => {
       </div>
 
       <div className=" flex  bg-white text-blue-950 border-sky-900 border-t-4 w-[97%] mx-auto sm:border-none">
-        <button className=" sm:hidden tracking-wide text-center font-bold mx-auto text-md py-3" onClick={e=>setIsOpen(!isOpen)}>
+        <button className=" sm:hidden font-manrope font-semibold tracking-wide text-center mx-auto text-md py-3" onClick={e=>setIsOpen(!isOpen)}>
           -- Menu --
         </button>
       </div>

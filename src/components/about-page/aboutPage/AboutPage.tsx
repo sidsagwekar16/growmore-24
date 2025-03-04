@@ -7,7 +7,7 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="flex overflow-hidden flex-col pb-24 bg-white max-md:pb-24">
     
-
+ 
     <div
       className="relative flex justify-center px-16 pt-32 pb-28 -mt-8 w-full text-6xl font-extrabold leading-none text-white text-center max-md:px-5 max-md:pt-24 max-md:pb-28 max-md:max-w-full max-md:text-4xl"
         style={{
@@ -20,17 +20,17 @@ export const AboutPage: React.FC = () => {
         }}
       >   
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-        <div className="relative z-10">
+        <div className="relative z-10 font-manrope font-semibold">
           ABOUT US
         </div>
       </div>
 
       <section className="box-borde my-24 flex relative flex-col shrink-0">
-        <h1 className="self-center  text-5xl font-bold leading-tight text-zinc-800 max-md:mt-10 max-md:max-w-full max-md:text-4xl max-sm:text-center">
+        <h1 className="self-center font-manrope font-semibold text-5xl leading-tight text-zinc-800 max-md:mt-10 max-md:max-w-full max-md:text-4xl max-sm:text-center">
           Grounded in Heritage
         </h1>
         <div className="flex  shrink-0 self-center mt-4 h-1 bg-sky-800 w-[191px]" />
-        <p className="self-center  mt-6 text-base leading-7 text-justify sm:text-center max-w-[70%] text-zinc-500 max-md:max-w-full max-sm:w-4/5">
+        <p className="self-center font-manrope mt-6 text-base leading-7 text-justify sm:text-center max-w-[70%] text-zinc-500 max-md:max-w-full max-sm:w-4/5">
           Growmore Technologies Limited is a Zambian company specializing in
           agricultural machinery, with branches across Zambia and Malawi. As the
           sole distributors of Farmtrac tractors, we also offer agricultural
@@ -61,8 +61,8 @@ export const AboutPage: React.FC = () => {
 
       <section className="box-border flex relative flex-col shrink-0">
         <div className="flex flex-col items-start mt-24 px-8 sm:ml-20 md:ml-8 lg:ml-20 sm:px-12 max-w-full w-[223px] max-md:mt-10 max-md:ml-2.5">
-          <h2 className="text-2xl text-red-600">Our Trusted</h2>
-          <div className="text-5xl font-bold leading-tight text-zinc-800 max-md:text-4xl">
+          <h2 className="text-2xl text-red-600 font-covered w-max">Our Trusted</h2>
+          <div className="text-5xl font-manrope font-semibold leading-tight text-zinc-800 max-md:text-4xl">
             Partners
           </div>
           <div className="flex shrink-0 self-stretch h-1 bg-sky-800" />

@@ -67,7 +67,7 @@ export const Introduction: React.FC = () => {
         </div>
 
         <button
-          className="px-9 py-4 font-manrope  mt-6 text-md font-bold text-white bg-sky-800 rounded-xl max-md:px-5"
+          className="px-9 py-4 font-manrope  mt-6 text-md font-semibold text-white bg-sky-800 rounded-xl max-md:px-5"
           tabIndex={0}
           onClick={() => navigate('/categories')}
         >
