@@ -21,19 +21,19 @@ const ProductCard: React.FC<ProductProps> = ({ image_url, name }) => {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="flex flex-col rounded-3xl w-full overflow-hidden">
+      <div className="flex flex-col rounded-3xl w-full overflow-hidden h-[40vh]">
         <img
           loading="lazy"
           src={image_url || DEFAULT_IMAGE}
           alt={name || "Product"}
-          className="object-cover w-full h-60 rounded-3xl"
+          className="object-cover w-full h-52 rounded-3xl"
         />
-        <div className="flex items-center justify-center p-2 bg-white ">
+        <div className="flex items-center justify-center bg-white py-2 flex-grow">
           <p className="text-lg font-manrope font-semibold text-center">{name}</p>
         </div>
       </div>
       <button
-        className="w-full mt-4 pt-3 pb-2 text-md font-manrope font-semibold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors"
+        className="w-full p-3 text-md font-manrope font-semibold text-black border-2 border-sky-800 rounded-xl hover:bg-sky-50 transition-colors"
         onClick={(e) => handleNavigate(e, name)}
       >
         View More
