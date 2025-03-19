@@ -114,7 +114,7 @@ const SingleProduct = () => {
 
   return (
     <div className=''>
-      <header className="flex justify-center items-center pt-28 pb-28 w-full bg-gray-900">
+      <header className="flex justify-center items-center py-24 w-full bg-gray-900">
         <h1 className="text-3xl sm:text-6xl font-manrope font-semibold text-white text-center">{product}</h1>
       </header>
 

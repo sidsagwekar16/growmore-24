@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 const ContactPage = () => {
   return (
     <div className="min-h-screen w-screen flex flex-col items-center">
-      <header className="flex justify-center items-center pt-20 md:py-28 pb-20 w-full bg-gray-900">
+      <header className="flex justify-center items-center pt-20 md:py-24 pb-20 w-full bg-gray-900">
         <h1 className="text-3xl md:text-6xl font-manrope font-semibold text-white text-center">Contact Us</h1>
       </header>
       <div className="max-w-7xl w-full my-16 p-6 md:p-10 rounded-xl grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-6">

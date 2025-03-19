@@ -26,19 +26,38 @@ const SingleBlog = () => {
   const post = blogPosts.find((post) => post.id === parseInt(id));
 
   if (!post) {
-    return <div className="min-h-screen flex items-center justify-center text-2xl">Post not found</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center text-2xl text-gray-600">
+        Post not found
+      </div>
+    );
   }
 
   return (
-    <div className="w-screen py-6 md:py-10 bg-white flex justify-center">
-      <div className=" w-[85%]">
-        <img src={post.image} alt={post.title} className="w-full rounded-lg mb-6 h-[40vh] lg:h-[70vh]" />
+    <div className="w-full py-6 md:py-10 bg-white flex justify-center">
+      <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]">
+        {/* Blog Image */}
+        <img
+          src={post.image}
+          alt={post.title}
+          className="w-full rounded-lg mb-6 object-cover h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]"
+        />
+
+        {/* Author and Date */}
         <div className="flex flex-col items-center text-center">
-          <p className="text-gray-600 font-manrope">{post.author}</p>
-          <p className="text-gray-400 text-sm font-manrope">{post.date} • {post.category}</p>
+          <p className="text-gray-600 font-medium">{post.author}</p>
+          <p className="text-gray-400 text-sm">{post.date} • {post.category}</p>
         </div>
-        <h1 className="text-3xl text-center mt-4 mb-6 font-manrope font-semibold">{post.title}</h1>
-        <p className="text-gray-700 leading-7 text-justify font-manrope">{post.content}</p>
+
+        {/* Title */}
+        <h1 className="text-2xl sm:text-3xl text-center mt-4 mb-6 font-semibold">
+          {post.title}
+        </h1>
+
+        {/* Content */}
+        <p className="text-gray-700 leading-7 text-justify text-sm sm:text-base">
+          {post.content}
+        </p>
       </div>
     </div>
   );

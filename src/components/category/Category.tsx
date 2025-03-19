@@ -62,7 +62,7 @@ const Category: React.FC = () => {
 
   return (
     <div className="flex flex-col bg-white min-h-screen">
-      <header className="flex justify-center items-center px-8 pt-20 pb-20 w-full bg-gray-900">
+      <header className="flex justify-center items-center px-8 py-24 w-full bg-gray-900">
         <h1 className="text-4xl md:text-6xl font-manrope font-semibold text-white text-center">
           OUR PRODUCTS
         </h1>

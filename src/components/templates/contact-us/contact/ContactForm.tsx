@@ -22,7 +22,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col self-stretch h-max p-3 mx-auto my-auto w-full bg-white rounded-lg border-solid border-slate-200 lg:w-[30vw] border-2 md:p-8"
+      className="flex flex-col self-stretch h-max p-3 mx-auto my-auto w-full bg-white rounded-lg border-solid border-slate-200 xl:w-[30vw] border-2 md:p-8"
     >
       <InputField
         label="Name"
