@@ -23,6 +23,7 @@ const ProductCard: React.FC<ProductProps> = ({
   imgSrc,
   product_name,
   product_spec,
+  setFormOpen
 }) => {
   const navigate = useNavigate();
 
@@ -54,7 +55,7 @@ const ProductCard: React.FC<ProductProps> = ({
           View more
         </button>
         <div className="flex-1 hidden lg:block">
-          <button className="w-full py-3 text-sm font-manrope font-semibold text-white bg-sky-800 rounded-lg hover:bg-sky-700">
+          <button className="w-full py-3 text-sm font-manrope font-semibold text-white bg-sky-800 rounded-lg hover:bg-sky-700" onClick={()=>setFormOpen(true)}>
             Enquire now
           </button>
         </div>
@@ -63,7 +64,7 @@ const ProductCard: React.FC<ProductProps> = ({
   );
 };
 
-const ProductCatalog: React.FC = () => {
+const ProductCatalog: React.FC = ({setFormOpen}) => {
   const [products, setProducts] = React.useState<ProductProps[]>([]);
   const [productDescription, setProductDescription] = React.useState<string>("");
   const { name } = useParams();
@@ -97,7 +98,7 @@ const ProductCatalog: React.FC = () => {
         <p className="mt-2 font-manrope text-gray-500 max-w-2xl">{productDescription}</p>
         <section className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
           {products.map((product, index) => (
-            <ProductCard key={index} {...product} />
+            <ProductCard key={index} {...product} setFormOpen={setFormOpen}/>
           ))}
         </section>
       </main>

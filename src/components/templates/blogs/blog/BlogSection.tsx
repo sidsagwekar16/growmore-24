@@ -3,9 +3,26 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BlogCard } from "./components/BlogCard.tsx";
-import { blogPosts } from "./data/blogPosts.ts";
 
 export function BlogSection() {
+  const [blogs, setBlogs] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/blogs")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.blogs) {
+          // Convert the object into an array of blog objects
+          const blogArray = Object.keys(data.blogs).map((key) => ({
+            id: key,
+            ...data.blogs[key],
+          }));
+          setBlogs(blogArray);
+        }
+      })
+      .catch((error) => console.error("Error fetching blogs:", error));
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -49,13 +66,17 @@ export function BlogSection() {
         </div>
       </div>
       <div className="mt-16 w-full max-md:mt-10 max-md:max-w-full">
-        <Slider {...settings} className="w-full">
-          {blogPosts.map((post) => (
-            <div key={post.id} className="px-2">
-              <BlogCard post={post} />
-            </div>
-          ))}
-        </Slider>
+        {blogs.length > 0 ? (
+          <Slider {...settings} className="w-full">
+            {blogs.map((post) => (
+              <div key={post.id} className="px-2">
+                <BlogCard post={post} />
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <p className="text-center text-gray-500">Loading blogs...</p>
+        )}
       </div>
     </div>
   );

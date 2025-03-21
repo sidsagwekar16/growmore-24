@@ -4,11 +4,33 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BlogPost } from "../types";
 
-interface BlogSliderProps {
-  posts: BlogPost[];
-}
+export function BlogSlider() {
+  const [posts, setPosts] = React.useState<BlogPost[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
-export function BlogSlider({ posts }: BlogSliderProps) {
+  React.useEffect(() => {
+    fetch("https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/blogs")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.blogs) {
+          // Convert object to array and adjust fields
+          const blogArray = Object.keys(data.blogs).map((key) => ({
+            id: key,
+            title: data.blogs[key].title || key, // Fallback to key if title is missing
+            headline: data.blogs[key].headline || "",
+            content: data.blogs[key].content,
+            created_by: data.blogs[key].created_by,
+            created_at: new Date(data.blogs[key].created_at).toLocaleDateString(),
+            imageUrl: data.blogs[key].image_url || "https://via.placeholder.com/400", // Default image
+            tags: data.blogs[key].tags || [],
+          }));
+          setPosts(blogArray);
+        }
+      })
+      .catch((error) => console.error("Error fetching blogs:", error))
+      .finally(() => setLoading(false));
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -30,13 +52,21 @@ export function BlogSlider({ posts }: BlogSliderProps) {
   };
 
   return (
-    <Slider {...settings} className="w-full">
-      {posts.map((post, index) => (
-        <div key={index} className="px-2">
-          <BlogCard post={post} />
-        </div>
-      ))}
-    </Slider>
+    <div>
+      {loading ? (
+        <p className="text-center text-gray-500">Loading blogs...</p>
+      ) : posts.length > 0 ? (
+        <Slider {...settings} className="w-full">
+          {posts.map((post, index) => (
+            <div key={index} className="px-2">
+              <BlogCard post={post} />
+            </div>
+          ))}
+        </Slider>
+      ) : (
+        <p className="text-center text-gray-500">No blogs available.</p>
+      )}
+    </div>
   );
 }
 
@@ -53,15 +83,15 @@ export function BlogCard({ post }: { post: BlogPost }) {
 
       {/* Blog Content */}
       <div className="py-6 px-0">
-        <p className="text-sm text-black">{post.category}</p>
+        <p className="text-sm text-black">{post.tags?.join(", ") || "Uncategorized"}</p>
         <h3 className="mt-2 text-lg md:text-xl font-semibold text-gray-900">{post.title}</h3>
-        <p className="mt-2 text-sm md:text-base text-gray-700">{post.description}</p>
+        <p className="mt-2 text-sm md:text-base text-gray-700">{post.headline || post.content}</p>
 
         {/* Blog Meta Information */}
         <div className="flex items-center gap-2 text-gray-600 text-xs md:text-sm mt-4">
-          <span>{post.date}</span>
+          <span>{post.created_at}</span>
           <span className="text-lg">•</span>
-          <span>{post.readTime}</span>
+          <span>{post.created_by}</span>
         </div>
       </div>
     </div>
