@@ -15,7 +15,7 @@ export function BlogSection() {
           // Convert object to array and format fields
           const formattedBlogs = Object.keys(data.blogs).map((key) => ({
             id: key,
-            title: data.blogs[key].title || "Untitled",
+            category: data.blogs[key].title || "Untitled",
             headline: data.blogs[key].headline || "No headline available.",
             content: data.blogs[key].content || "Untitled",
             created_by: data.blogs[key].created_by || "Unknown",

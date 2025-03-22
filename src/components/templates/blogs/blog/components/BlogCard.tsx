@@ -59,7 +59,7 @@ export function BlogCard({ post }) {
       {/* Blog Content */}
       <div className="py-6 px-0">
         <p className="text-sm text-black">{post.id}</p>
-        <h3 className="mt-2 text-lg md:text-xl font-semibold text-gray-900">{post.title}</h3>
+        <h3 className="mt-2 text-lg md:text-xl font-semibold text-gray-900">{post.headline}</h3>
         <p className="mt-2 text-sm md:text-base text-gray-700 truncate">{ post.content}</p>
 
         {/* Blog Meta Information */}
