@@ -12,14 +12,22 @@ export function BlogSection() {
       .then((response) => response.json())
       .then((data) => {
         if (data.blogs) {
-          // Convert the object into an array of blog objects
-          const blogArray = Object.keys(data.blogs).map((key) => ({
+          // Convert object to array and format fields
+          const formattedBlogs = Object.keys(data.blogs).map((key) => ({
             id: key,
-            ...data.blogs[key],
+            title: data.blogs[key].title || "Untitled",
+            headline: data.blogs[key].headline || "No headline available.",
+            content: data.blogs[key].content || "Untitled",
+            created_by: data.blogs[key].created_by || "Unknown",
+            created_at: new Date(data.blogs[key].created_at).toLocaleDateString(),
+            category: data.blogs[key].tags?.join(", ") || "Uncategorized",
+            description: data.blogs[key].content || "No description available.",
+            image: data.blogs[key].image_url || "https://via.placeholder.com/400",
           }));
-          setBlogs(blogArray);
+          setBlogs(formattedBlogs);
         }
       })
+      
       .catch((error) => console.error("Error fetching blogs:", error));
   }, []);
 
