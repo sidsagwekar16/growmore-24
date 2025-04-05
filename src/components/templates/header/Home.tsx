@@ -13,12 +13,12 @@ const Home = () => {
       <header className="w-[100vw] overflow-x-hidden">
         <MyComponent />
         <Introduction />
-        <ProductCatalog/>
+        {/* <ProductCatalog/>*/}
         <ServicesSection /> 
         <AgricultureHero />
         <TestimonialsSection />  
         <Contact />
-        <BlogSection />
+        <BlogSection /> 
 
       </header>
     );

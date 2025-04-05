@@ -13,7 +13,7 @@ interface Slide {
 const SLIDES: Slide[] = [
   {
     id: 1,
-    imageUrl: 'https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/90ab530e859c6de6b5a1df5ee9a65d801d2055863836a3b2b225c057770ee6f7?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&',
+    imageUrl: "https://honeydew-fox-305576.hostingersite.com/growmore/images/image1.jpg",
     altText: 'Background Image 1',
     heading: "Tools that Power Your Harvest",
     description: "Quality Accessories, Maximum Yield",
@@ -21,7 +21,7 @@ const SLIDES: Slide[] = [
   },
   {
     id: 2,
-    imageUrl: 'https://picsum.photos/seed/picsum/200/300',
+    imageUrl: "https://honeydew-fox-305576.hostingersite.com/growmore/images/image2.jpg",
     altText: 'Background Image 2',
     heading: "Gear Up for a Smarter Farm",
     description: "Durable. Reliable. Essential.",
@@ -29,7 +29,7 @@ const SLIDES: Slide[] = [
   },
   {
     id: 3,
-    imageUrl: 'https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/90ab530e859c6de6b5a1df5ee9a65d801d2055863836a3b2b225c057770ee6f7?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&',
+    imageUrl: "https://honeydew-fox-305576.hostingersite.com/growmore/images/image3.jpg",
     altText: 'Background Image 3',
     heading: "Accessories Built for Every Field",
     description: "From Soil to Success",
@@ -60,13 +60,15 @@ const MyComponent: React.FC = () => {
 
   return (
     <div className="relative flex flex-col justify-center items-center w-[100vw] overflow-x-hidden min-h-[810px] overflow-hidden py-44 max-md:px-5 max-md:py-24">
-      <img
-        loading="lazy"
-        src={SLIDES[currentIndex].imageUrl}
-        alt={SLIDES[currentIndex].altText}
-        className="absolute inset-0 object-cover w-screen h-full"
-      />
-      <div className="relative flex flex-col items-start max-w-full w-[1160px]">
+     <> <img
+    loading="lazy"
+    src={SLIDES[currentIndex].imageUrl}
+    alt={SLIDES[currentIndex].altText}
+    className="absolute inset-0 object-cover w-screen h-full z-0"
+  />
+  <div className="absolute inset-0 bg-black opacity-50 z-10" />
+</>
+      <div className="relative z-20 flex flex-col items-start max-w-full w-[1160px]">
         <div className="ml-7 font-manrope text-white uppercase max-md:ml-2.5">{SLIDES[currentIndex].heading}</div>
         <div className="flex flex-wrap justify-between w-full mt-12 max-md:mt-10">
           <div className="text-9xl text-amber-300 leading-[110px] max-md:text-4xl max-md:leading-10">
@@ -82,8 +84,8 @@ const MyComponent: React.FC = () => {
             />
           ))}
         </div>
-        <div className="flex flex-col ml-0 mt-11 max-w-full w-[519px] max-md:mt-10">
-          <div className="text-base font-manrope text-white text-opacity-70 leading-8">
+        <div className="flex flex-col ml-0 mt-11 max-w-full w-[519px] max-md:mt-10 ">
+          <div className="text-base font-manrope text-white text-opacity-70 leading-8 ">
             {SLIDES[currentIndex].text}
           </div>
           <div className="flex gap-5 items-center mt-3.5">

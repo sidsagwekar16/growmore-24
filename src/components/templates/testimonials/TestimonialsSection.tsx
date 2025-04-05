@@ -16,17 +16,17 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
   const testimonials: Testimonial[] = [
     {
       text: "The tractor I bought from FarmMachineryHub has transformed my farming operations. It's powerful and easy to use!",
-      author: "Steve Smith",
+      author: "John Smith",
       avatar: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png"
     },
     {
       text: "I was impressed by the quality and durability of the plow I purchased. My fields are now perfectly prepared for planting.",
-      author: "Tom Cruise",
+      author: "Jake Cruise",
       avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvlBlOJM_kUzWczQDxlorQPpsSaXqwNGqY5gcwDVHzt1saBEBiIbEIRhjC-xdKbZsg2Zw&usqp=CAU"
     },
     {
       text: "The combine harvester from FarmMachineryHub has significantly increased my efficiency during harvest season. Highly recommend!",
-      author: "Peter Parker",
+      author: "Peter William",
       avatar: "https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369990.png"
     }
   ];

@@ -109,6 +109,7 @@ export const Contact: React.FC = () => {
           />
         </div>
       </div>
+   
     </div>
   );
 };
