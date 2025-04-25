@@ -8,7 +8,9 @@ export const Contact: React.FC = () => {
     name: "",
     email: "",
     phoneNumber: "",
+    countryCode: "+91", // default to India or any
     message: "",
+
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,7 +28,7 @@ export const Contact: React.FC = () => {
     // Prepare final submission data
     const submissionData = {
       name: formData.name.trim(),
-      number: formData.phoneNumber.trim(), // Ensure field matches API (`number` instead of `phoneNumber`)
+      number: `${formData.countryCode}${formData.phoneNumber.trim()}`, // ✅ Combine code + number
       email: formData.email.trim(),
       message: formData.message.trim(),
       timestamp,
@@ -77,7 +79,7 @@ export const Contact: React.FC = () => {
   return (
     <div className="flex flex-col px-3 pt-16 md:px-8 lg:px-12 w-[90%] mx-auto">
       <div className="text-left">
-        <h3 className="text-red-600 text-xl font-covered">Contact</h3>
+ 
         <h1 className="text-4xl text-gray-800 sm:text-5xl font-manrope font-semibold">Contact Us</h1>
       </div>
       <div className="flex flex-col lg:flex-row sm:gap-10 mt-10 w-full items-center justify-center">

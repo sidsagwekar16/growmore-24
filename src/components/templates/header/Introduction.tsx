@@ -35,7 +35,7 @@ export const Introduction: React.FC = () => {
 
       {/* Text Section */}
       <div className="flex flex-col items-center lg:items-start xl-lg:px-[20%] sm:items-start lg:text-left w-[90%]">
-        <div className="text-2xl text-red-600 w-full font-covered">Our Introductions</div>
+  
         <h2 className="text-3xl font-manrope font-semibold sm:text-4xl font-bold leading-9 text-zinc-800">
           Grounded in Heritage <br />
           Cultivating for <br />

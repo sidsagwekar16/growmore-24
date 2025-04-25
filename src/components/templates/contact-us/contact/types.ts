@@ -3,6 +3,8 @@ export interface FormData {
   email: string;
   message: string;
   phoneNumber:int;
+  countryCode: string; // add this
+
 }
 
 export interface InputFieldProps {

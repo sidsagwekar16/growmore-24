@@ -44,15 +44,40 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         icon={<MdOutlineEmail className="text-gray-500 text-lg font-manrope" />}
       />
 
-      <InputField
-        label="Phone Number"
-        type="text"
-        placeholder="Enter your Phone Number"
+      {/* Phone Number with Country Code */}
+<div className="flex flex-col w-full mb-4">
+  <label className="text-base font-medium text-gray-600 font-manrope mb-2">
+    Phone Number
+  </label>
+  <div className="flex items-center gap-2">
+    <select
+      className="border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700 focus:ring-2 focus:ring-sky-500"
+      value={formData.countryCode}
+      onChange={(e) => onFieldChange("countryCode", e.target.value)}
+    >
+      <option value="+91">🇮🇳 +91</option>
+      <option value="+1">🇺🇸 +1</option>
+      <option value="+44">🇬🇧 +44</option>
+      <option value="+61">🇦🇺 +61</option>
+      {/* Add more as needed */}
+    </select>
+
+    <div className="relative flex-grow">
+      <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500 text-lg">
+        <TbPhone />
+      </span>
+      <input
+        type="tel"
+        placeholder="Enter your phone number"
         value={formData.phoneNumber}
-        onChange={(value) => onFieldChange("phoneNumber", value)}
+        onChange={(e) => onFieldChange("phoneNumber", e.target.value)}
         required
-        icon={<TbPhone className="text-gray-500 text-lg" />}
+        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 focus:ring-2 focus:ring-sky-500"
       />
+    </div>
+  </div>
+</div>
+
 
       <div className="flex flex-col w-full">
         <label

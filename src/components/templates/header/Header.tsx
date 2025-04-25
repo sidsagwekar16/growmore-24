@@ -45,6 +45,7 @@ const contactItems = [
 const navigationItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
+  { label: "Services and Parts", path: "/services" },
   { label: "Products", path: "/categories" },
   { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" }
@@ -67,7 +68,7 @@ export const Header: React.FC = () => {
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/998889ad56e68a6903a436c4461117a3a74997d246d8344238c85542850ca191?apiKey=0014938fb5fd4152961b843a94ff3203&"
           alt="Company logo"
-          className="object-contain w-44 max-w-full mx-auto my-4 sm:mx-16"
+          className="object-contain w-50 max-w-full mx-auto my-4 sm:mx-16"
         /></Link>
 
         <div className="hidden lg:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2">

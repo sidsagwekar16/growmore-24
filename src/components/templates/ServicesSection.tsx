@@ -52,7 +52,7 @@ const ServicesSection: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-1/2 bg-slate-400 bg-opacity-20 z-[-1]" />
 
       <div className="text-center mb-12">
-        <h2 className="text-2xl text-red-600 font-covered">Our Services</h2>
+       
         <h3 className="mt-4 text-4xl md:text-5xl font-manrope font-semibold text-zinc-800">
           What We Offer
         </h3>

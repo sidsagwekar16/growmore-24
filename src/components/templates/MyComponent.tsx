@@ -11,16 +11,9 @@ interface Slide {
 }
 
 const SLIDES: Slide[] = [
+ 
   {
     id: 1,
-    imageUrl: "https://honeydew-fox-305576.hostingersite.com/growmore/images/image1.jpg",
-    altText: 'Background Image 1',
-    heading: "Tools that Power Your Harvest",
-    description: "Quality Accessories, Maximum Yield",
-    text: "Equip your farm with high-performance tools designed to simplify daily tasks and improve efficiency."
-  },
-  {
-    id: 2,
     imageUrl: "https://honeydew-fox-305576.hostingersite.com/growmore/images/image2.jpg",
     altText: 'Background Image 2',
     heading: "Gear Up for a Smarter Farm",
@@ -28,7 +21,7 @@ const SLIDES: Slide[] = [
     text: "Our farming accessories are built to withstand tough conditions, ensuring long-lasting performance with every use."
   },
   {
-    id: 3,
+    id: 2,
     imageUrl: "https://honeydew-fox-305576.hostingersite.com/growmore/images/image3.jpg",
     altText: 'Background Image 3',
     heading: "Accessories Built for Every Field",
