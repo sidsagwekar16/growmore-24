@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 // Define the product interface based on API structure
 interface ProductProps {
   imgSrc: string;
+  images?: string[]; // optional because backend gives it
   category: string;
   description: string;
   features: string;
@@ -74,18 +75,30 @@ const ProductCatalog: React.FC = ({setFormOpen}) => {
   }, [name]);
 
   const fetchData = async () => {
-    try {
-      const response = await fetch(
-        `https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/category/${name}`
-      );
-      const data = await response.json();
-      setProductDescription(data.description);
-      setProducts(data.products);
-    } catch (error) {
-      console.error("Error fetching data", error);
+  try {
+    const response = await fetch(
+      `https://growmore-backend.vercel.app/admin/inventory/category/${name}`
+    );
+    const data = await response.json();
+
+    setProductDescription(data.description || "");
+
+    if (Array.isArray(data.products)) {
+      const mappedProducts = data.products.map((product) => ({
+        ...product,
+        imgSrc: product.images?.[0] || "", // 🛠️ map first image to imgSrc
+      }));
+      setProducts(mappedProducts);
+    } else {
       setProducts([]);
     }
-  };
+  } catch (error) {
+    console.error("Error fetching data", error);
+    setProducts([]);
+  }
+};
+
+  
 
   return (
     <div className="flex flex-col bg-white min-h-screen">

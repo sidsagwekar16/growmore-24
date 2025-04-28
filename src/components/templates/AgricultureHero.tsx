@@ -120,11 +120,12 @@ const AgricultureHero: React.FC = () => {
         {/* Hero Text */}
         <div className="text-center mt-16 font-manrope font-semibold sm:mt-40 px-4">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl leading-tight">
-            Be a part of the farming transformation
+           Harvest Better. Empower Your Future.
           </h1>
           <p className="mt-4 text-lg sm:text-2xl sm:mt-10">
-            Team up with the Expert Software Developers
-          </p>
+          Partner with Africa’s trusted experts in modern farming solutions.
+
+</p>
         </div>
 
         {/* Email Subscription Form */}

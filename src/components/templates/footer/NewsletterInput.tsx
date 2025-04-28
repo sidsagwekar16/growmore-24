@@ -15,7 +15,7 @@ export const NewsletterInput: React.FC<NewsletterInputProps> = ({
     setMessage("");
     try {
       const response = await fetch(
-        "https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/subscribe?email=" +
+        "https://growmore-backend.vercel.app/subscribe?email=" +
           encodeURIComponent(email),
         {
           method: "POST",

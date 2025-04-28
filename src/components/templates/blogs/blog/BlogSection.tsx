@@ -2,20 +2,20 @@ import * as React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 import { BlogCard } from "./components/BlogCard.tsx";
 
 export function BlogSection() {
   const [blogs, setBlogs] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/blogs")
+    fetch("https://growmore-backend.vercel.app/admin/blogs")
       .then((response) => response.json())
       .then((data) => {
         if (data.blogs) {
-          // Convert object to array and format fields
           const formattedBlogs = Object.keys(data.blogs).map((key) => ({
             id: key,
-            category: data.blogs[key].title || "Untitled",
+            title: data.blogs[key].title || "Untitled",
             headline: data.blogs[key].headline || "No headline available.",
             content: data.blogs[key].content || "Untitled",
             created_by: data.blogs[key].created_by || "Unknown",
@@ -27,7 +27,6 @@ export function BlogSection() {
           setBlogs(formattedBlogs);
         }
       })
-      
       .catch((error) => console.error("Error fetching blogs:", error));
   }, []);
 
@@ -42,25 +41,16 @@ export function BlogSection() {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1280, // Large Tablets
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
+        breakpoint: 1280,
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
       },
       {
-        breakpoint: 1024, // Tablets
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
+        breakpoint: 1024,
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
       {
-        breakpoint: 640, // Mobile screens
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
+        breakpoint: 640,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
       },
     ],
   };
@@ -73,12 +63,15 @@ export function BlogSection() {
           News & Articles
         </div>
       </div>
+
       <div className="mt-16 w-full max-md:mt-10 max-md:max-w-full">
         {blogs.length > 0 ? (
           <Slider {...settings} className="w-full">
             {blogs.map((post) => (
               <div key={post.id} className="px-2">
-                <BlogCard post={post} />
+                <Link to={`/blog/${post.id}`}>
+                  <BlogCard post={post} />
+                </Link>
               </div>
             ))}
           </Slider>

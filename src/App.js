@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from "./components/templates/header/Header.tsx"; // ✅ Directly importing Header
 import Footer from "./components/templates/footer/Footer.tsx"; // ✅ Directly importing Footer
 import Home from "./components/templates/header/Home.tsx"; // ✅ Ensure this path is correct
@@ -15,6 +17,18 @@ import SingleBlog from "./components/templates/blogs/blog/SingleBlog.tsx";
 import ContactPage from "./components/templates/contact-us/contact/ContactPage.tsx";
 import FixedForm from "./components/templates/FixedForm.tsx";
 
+
+
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
 
   const [isFormOpen,setFormOpen] = useState(false)
@@ -24,6 +38,7 @@ function App() {
       <Header /> 
       <FixedForm isFormOpen={isFormOpen} setFormOpen={setFormOpen}/>
       <main>  
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<AboutPage />} /> {/* ✅ Added About Page */}

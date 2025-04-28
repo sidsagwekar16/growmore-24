@@ -77,7 +77,7 @@ const ProductCatalog: React.FC = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/collection/Home"
+        "https://growmore-backend.vercel.app/admin/inventory/collection/Home"
       );
       const data = await response.json();
       const formattedProducts = data.items

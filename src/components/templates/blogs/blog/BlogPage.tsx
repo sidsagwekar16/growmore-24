@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/blogs")
+    fetch("https://growmore-backend.vercel.app/admin/blogs")
       .then((response) => response.json())
       .then((data) => {
         if (data.blogs) {
-          // Convert object to array and format fields
           const formattedBlogs = Object.keys(data.blogs).map((key) => ({
             id: key,
             title: data.blogs[key].title || "Untitled",
@@ -38,12 +39,20 @@ const BlogPage = () => {
         ) : blogPosts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
             {blogPosts.map((post) => (
-              <div key={post.id} className="rounded-xl overflow-hidden bg-white">
-                <img src={post.image} alt={post.title} className="w-full object-cover h-[30vh] sm:h-[40vh]" />
+              <div
+                key={post.id}
+                className="rounded-xl overflow-hidden bg-white shadow-md hover:shadow-lg transition cursor-pointer"
+                onClick={() => navigate(`/blog/${post.id}`)}
+              >
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full object-cover h-[30vh] sm:h-[40vh]"
+                />
                 <div className="p-6">
                   <p className="text-sm uppercase font-manrope text-gray-500 mb-2">{post.category}</p>
                   <h2 className="text-2xl font-manrope font-semibold mb-3">{post.title}</h2>
-                  <p className="text-gray-700 font-manrope">{post.description}</p>
+                  <p className="text-gray-700 font-manrope text-sm">{post.description.substring(0, 120)}...</p>
                 </div>
               </div>
             ))}

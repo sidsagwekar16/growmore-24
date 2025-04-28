@@ -103,7 +103,7 @@ const SingleProduct = () => {
   const fetchProduct = async () => {
     try {
       const response = await fetch(
-        `https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/product/${product}`
+        `https://growmore-backend.vercel.app/admin/inventory/product/${product}`
       );
       const data = await response.json();
       setProductData(data)      
@@ -119,37 +119,59 @@ const SingleProduct = () => {
       </header>
 
       <section className="w-[90vw] mx-auto py-10 flex flex-col md:flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
-      {/* Product Information Section */}
-        <div className="lg:w-2/3 w-full p-6 rounded-lg">
-          <h2 className="text-5xl font-manrope font-semibold text-zinc-800 max-md:text-4xl text-center lg:text-left">
-            {product}
-          </h2>
-          <div className="h-1 mt-2 bg-sky-800 w-48 mx-auto lg:mx-0" />
-          <p className="mt-3 text-base leading-7 font-manrope text-zinc-500 text-center lg:text-left">
-            {productData.short_description}
-          </p>
+  {/* Left Side - Product Information */}
+  <div className="lg:w-2/3 w-full p-6 rounded-lg">
+    {/* Product Title */}
+    <h2 className="text-5xl font-manrope font-semibold text-zinc-800 max-md:text-4xl text-center lg:text-left">
+      {product}
+    </h2>
+    <div className="h-1 mt-2 bg-sky-800 w-48 mx-auto lg:mx-0" />
+    <p className="mt-3 text-base leading-7 font-manrope text-zinc-500 text-center lg:text-left">
+      {productData.short_description}
+    </p>
 
-          {/* Main Product Image */}
-          <div className="mt-6">
-            <img 
-              src={productData.images[1] ? productData.images[1] : "https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"}
-              alt="Product" 
-              className="w-full rounded-lg shadow-md" 
-            />
-          </div>
+    {/* Main Product Image inside white container */}
+    <div className="mt-6 flex justify-center bg-white p-6 rounded-lg shadow-md">
+    {productData.images?.[0] ? (
+  <img
+    src={productData.images[0]}
+    alt="Product"
+    className="max-w-full max-h-[450px] w-auto h-auto object-contain"
+  />
+) : (
+  <div className="max-w-full max-h-[450px] w-auto h-auto flex items-center justify-center text-gray-400 bg-white">
+    Loading...
+  </div>
+)}
+    </div>
 
-           <div className="hidden lg:flex mt-4 justify-center sm:justify-start space-x-4">
-             <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 1" className="h-20 rounded-lg shadow-md cursor-pointer" />
-             <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 2" className="h-20 rounded-lg shadow-md cursor-pointer" />
-             <img src={productData.images[1]?productData.images[1] :"https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"} alt="Thumbnail 3" className="h-20 rounded-lg shadow-md cursor-pointer" />
-            </div>
-          </div>
+    {/* Thumbnails */}
+    <div className="hidden lg:flex mt-4 justify-center sm:justify-start space-x-4">
+      {productData.images && productData.images.length > 0 ? (
+        productData.images.map((imgSrc, index) => (
+          <img
+            key={index}
+            src={imgSrc || "https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"}
+            alt={`Thumbnail ${index + 1}`}
+            className="h-20 w-20 object-contain rounded-lg shadow-md cursor-pointer hover:ring-2 hover:ring-sky-600"
+          />
+        ))
+      ) : (
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/598e82b070132be8bddb4579175e6ac351c8e0c59ed4375024d2758e675e2cbb?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"
+          alt="Default Thumbnail"
+          className="h-20 w-20 object-contain rounded-lg shadow-md cursor-pointer"
+        />
+      )}
+    </div>
+  </div>
 
-        {/* Tabs Section */}
-        <div className="w-full font-manrope lg:w-1/3 lg:h-[90vh] lg:mt-6 h-max bg-gray-100 p-6 rounded-lg shadow-md ">
-          <BasicTabs features={productData.features} description={productData.description} />
-        </div>
-      </section>
+  {/* Right Side - Tabs */}
+  <div className="w-full font-manrope lg:w-1/3 lg:h-[90vh] lg:mt-6 h-max bg-gray-100 p-6 rounded-lg shadow-md ">
+    <BasicTabs features={productData.features} description={productData.description} />
+  </div>
+</section>
+
 
 
       {

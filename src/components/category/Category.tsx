@@ -26,7 +26,7 @@ const ProductCard: React.FC<ProductProps> = ({ image_url, name }) => {
           loading="lazy"
           src={image_url || DEFAULT_IMAGE}
           alt={name || "Product"}
-          className="object-cover w-full h-52 rounded-3xl"
+          className="object-contain w-full h-52 rounded-3xl"
         />
         <div className="flex items-center justify-center bg-white py-2 flex-grow">
           <p className="text-lg font-manrope font-semibold text-center">{name}</p>
@@ -51,7 +51,7 @@ const Category: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/admin/inventory/categories");
+      const response = await fetch("https://growmore-backend.vercel.app/admin/inventory/categories");
       const data = await response.json();
       setProducts(data.categories);
     } catch (error) {

@@ -22,7 +22,9 @@ export const Footer: React.FC = () => {
             className="object-contain max-w-full w-[214px]"
           />
           <div className="self-stretch font-manrope sm:mt-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          At GrowMore, we are committed to driving innovation and empowering businesses across industries.
+With a passion for technology and excellence, we deliver solutions that help you grow smarter and faster.
+Join us on our journey to shape a better, more connected future.
           </div>
           <img
             loading="lazy"
@@ -53,7 +55,9 @@ export const Footer: React.FC = () => {
 
       <div className="flex flex-wrap gap-4 sm:gap-10 justify-between items-center py-4 w-full text-sm border-t border-solid border-t-gray-400 text-zinc-700 mx-auto">
         <div className="self-stretch my-auto font-manrope ">
-          All rights reserved @Growmoreweb
+        © 2025 GrowMore Technologies Limited. All rights reserved.
+
+
         </div>
         <div className="flex gap-10 items-start self-stretch my-auto text-right min-w-[240px]">
           {footerLinks.map((link, index) => (

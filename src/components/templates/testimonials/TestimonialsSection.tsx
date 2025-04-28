@@ -15,21 +15,22 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
 
   const testimonials: Testimonial[] = [
     {
-      text: "The tractor I bought from FarmMachineryHub has transformed my farming operations. It's powerful and easy to use!",
-      author: "John Smith",
+      text: "GrowMore helped us scale our farming operations beyond what we thought possible. Their machinery is top quality and built for our land.",
+      author: "Kwame Agyeman",
       avatar: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png"
     },
     {
-      text: "I was impressed by the quality and durability of the plow I purchased. My fields are now perfectly prepared for planting.",
-      author: "Jake Cruise",
+      text: "Thanks to GrowMore's equipment, our harvests are more efficient and our yields have improved. Real partners for African farmers.",
+      author: "Amina Yusuf",
       avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvlBlOJM_kUzWczQDxlorQPpsSaXqwNGqY5gcwDVHzt1saBEBiIbEIRhjC-xdKbZsg2Zw&usqp=CAU"
     },
     {
-      text: "The combine harvester from FarmMachineryHub has significantly increased my efficiency during harvest season. Highly recommend!",
-      author: "Peter William",
+      text: "The team at GrowMore understood exactly what we needed. Their support and service made a huge difference in our success.",
+      author: "Samuel Okeke",
       avatar: "https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369990.png"
     }
   ];
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,7 +62,9 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
             What They're Talking About
           </h3>
           <p className="mr-4 mt-4 text-base sm:text-lg text-neutral-600 font-manrope">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum justo eget nisi fermentum.
+          At GrowMore, we believe in empowering African businesses to thrive. Our commitment is to innovation, excellence, and growth for every community we serve.
+
+
           </p>
         </div>
 

@@ -44,7 +44,7 @@ export const Contact: React.FC = () => {
 
     try {
       const response = await fetch(
-        "https://growmore-hkbmhna2bxchd4bw.eastasia-01.azurewebsites.net/contact/submit",
+        "https://growmore-backend.vercel.app/contact/submit",
         {
           method: "POST",
           headers: {

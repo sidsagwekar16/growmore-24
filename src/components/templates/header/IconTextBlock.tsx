@@ -15,12 +15,10 @@ export const IconTextBlock: React.FC<IconTextBlockProps> = ({
         className="object-contain shrink-0 w-16 aspect-square"
       />
       <div className="text-xl font-semibold leading-7 text-stone-900">
-        Lorem Ipsum<span>la</span>
-        <br />
-        <span>boriosam</span>
+        {title}
       </div>
     </div>
   );
 };
 
-export default IconTextBlock; 
+export default IconTextBlock;

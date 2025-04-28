@@ -4,17 +4,18 @@ import { IntroductionProps } from "./types";
 import introImage from '../header/elements.png'
 import { useNavigate } from "react-router-dom";
 
+
 const iconBlocks = [
   {
     iconSrc:
       "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/86a86134c3dedf62994ce79fcd10092094c2a24e0b22e33e0f0f11ef9dc934d3?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&",
-    title: "Lorem Ipsum",
+    title: "Smart Mechanization Solutions",
     alt: "Feature icon 1",
   },
   {
     iconSrc:
       "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/6756b8e51790e55d88704495f54aa54460a649a6c7d96ba2a772c948a9d78109?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&",
-    title: "Lorem Ipsum",
+    title: "Sustainable Agriculture Support",
     alt: "Feature icon 2",
   },
 ];
