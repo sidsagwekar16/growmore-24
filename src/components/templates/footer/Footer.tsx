@@ -27,10 +27,7 @@ With a passion for technology and excellence, we deliver solutions that help you
 Join us on our journey to shape a better, more connected future.
           </div>
           <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/cef2c1741af94e24f147ccaebe8b08310cbf48ccee9608042df27210888d5ee1?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"
-            alt="Social media links"
-            className="object-contain my-2 sm:mt-4 max-w-full aspect-[2.79] w-[195px]"
+       
           />
         </div>
 

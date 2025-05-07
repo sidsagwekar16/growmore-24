@@ -1,6 +1,8 @@
 export interface SocialIconProps {
   src: string;
   alt: string;
+  href?: string;
+
 }
 
 export interface ContactItemProps {

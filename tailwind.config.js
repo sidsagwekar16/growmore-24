@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: { 
+        beige: '#E4E2D7',
+      },
       fontFamily: {
         covered: ["Covered By Your Grace", "cursive"],
         manrope: ["Manrope", "sans-serif"],

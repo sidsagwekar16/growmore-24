@@ -7,19 +7,21 @@ import { Link } from "react-router-dom";
 const socialIcons = [
   {
     src: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/e154722f993a050886bf3bfd7ac643d76ab0de78e6cd08a47831ba2c34d7c747?apiKey=0014938fb5fd4152961b843a94ff3203&",
-    alt: "Social media icon 1",
+    alt: "Social media twitter",
   },
   {
     src: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/8788253a7494627ed4b6d34520d8ca3749dcfe61702d0e12bdfe433f5ae008bd?apiKey=0014938fb5fd4152961b843a94ff3203&",
-    alt: "Social media icon 2",
+    alt: "Social media icon facebook",
+    href:"https://www.facebook.com/GrowmoreTechnologies/",
   },
   {
     src: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/464f0f66782b9cc8e83d9061cdd128862f27f5b4c531d51253ec8303febfb2bd?apiKey=0014938fb5fd4152961b843a94ff3203&",
-    alt: "Social media icon 3",
+    alt: "Social media pinterest",
   },
   {
     src: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/54feb20dee86f974bda45498092a704443151d61f8d4693df146e8cf855bdad3?apiKey=0014938fb5fd4152961b843a94ff3203&",
-    alt: "Social media icon 4",
+    alt: "Social media instagram",
+    href:"https://www.instagram.com/growmore_technologies/",
   },
 ];
 
@@ -27,8 +29,8 @@ const contactItems = [
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/9019a0cfa555231c0f17362e913d128d38f715af23d726803440e0f29b4b511f?apiKey=0014938fb5fd4152961b843a94ff3203&",
     label: "Call anytime",
-    value: "+91 556663737",
-    href: "tel:+91556663737",
+    value: "+260 979 121 827",
+    href: "tel:+260979121827",
   },
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/f67ae43fdf13e59c10735e3351f31a2a7ee328e69c00a2d6a57473b9a7dc23c2?apiKey=0014938fb5fd4152961b843a94ff3203&",
@@ -37,8 +39,8 @@ const contactItems = [
   },
   {
     icon: "https://cdn.builder.io/api/v1/image/assets/0014938fb5fd4152961b843a94ff3203/cbf940412daea3efce3306a73d7b653f42b90b2db9f4d28064232bf96ded020f?apiKey=0014938fb5fd4152961b843a94ff3203&",
-    label: "Dolor sit ame",
-    value: "Lorem ipsum",
+    label: "Address",
+    value: "Plot No. 12114 Mumbwa Rd, Area 10101, Zambia",
   },
 ];
 
@@ -94,9 +96,9 @@ export const Header: React.FC = () => {
       <nav
         className={`${
           isOpen ? "flex" : "hidden"
-        } flex-col sm:flex sm:flex-row justify-center items-center w-full space-y-4 sm:space-y-0`}
+        } flex-col sm:flex sm:flex-row justify-center items-center w-full space-y-4 sm:space-y-0 bg-beige`}
       >
-        <ul className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 text-lg font-medium" onClick={e=>setIsOpen(false)}>
+        <ul className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 text-lg font-medium bg-beige " onClick={e=>setIsOpen(false)}>
             {navigationItems.map((item, index) => (
               <NavigationItem key={index} {...item} />
             ))}
