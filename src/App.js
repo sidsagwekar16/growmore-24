@@ -16,7 +16,7 @@ import BlogPage from "./components/templates/blogs/blog/BlogPage.tsx";
 import SingleBlog from "./components/templates/blogs/blog/SingleBlog.tsx";
 import ContactPage from "./components/templates/contact-us/contact/ContactPage.tsx";
 import FixedForm from "./components/templates/FixedForm.tsx";
-
+import MaintenancePage  from "./components/maintainance-page/maintainance.tsx"
 
 
 export function ScrollToTop() {
@@ -30,31 +30,50 @@ export function ScrollToTop() {
 }
 
 function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  )
+}
 
-  const [isFormOpen,setFormOpen] = useState(false)
+function AppContent() {
+  const location = useLocation()
+  const [isFormOpen, setFormOpen] = useState(false)
+
+  const isMaintenancePage = location.pathname === "/"
 
   return (
-    <Router>    
-      <Header /> 
-      <FixedForm isFormOpen={isFormOpen} setFormOpen={setFormOpen}/>
-      <main>  
-      <ScrollToTop />
+    <>
+      {!isMaintenancePage && <Header />}
+      {!isMaintenancePage && (
+        <FixedForm isFormOpen={isFormOpen} setFormOpen={setFormOpen} />
+      )}
+
+      <main>
+        <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<AboutPage />} /> {/* ✅ Added About Page */}
-          <Route path="/services" element={<Services />} /> {/* ✅ Added About Page */}
-          <Route path="/product-list/:name" element={<ProductList setFormOpen={setFormOpen}/>} /> {/* ✅ Added About Page */}
-          <Route path="/product/:product" element={<SingleProduct/>} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
-          <Route path="/categories" element={<Category/>} />
-          <Route path="/blog" element={<BlogPage/>} />
-          <Route path="/blog/:id" element={<SingleBlog/>} />
-          <Route path="/contact" element={<ContactPage/>} />
+          <Route path="/" element={<MaintenancePage />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<Services />} />
+          <Route
+            path="/product-list/:name"
+            element={<ProductList setFormOpen={setFormOpen} />}
+          />
+          <Route path="/product/:product" element={<SingleProduct />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/categories" element={<Category />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<SingleBlog />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
-      <Footer /> {/* ✅ Footer is now directly inside App.js */}
-    </Router>
-  );
+
+      {!isMaintenancePage && <Footer />}
+    </>
+  )
 }
+
 
 export default App;
