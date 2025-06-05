@@ -53,16 +53,16 @@ const ServicesPage: React.FC = () => {
       title: "Contact",
       subtitle: "Contact",
       description: (
+        
         <ul>
-          Plot No. 5284 Buyantanshi Road, Lusaka, Zambia
+          Plot No. 12114 Mumbwa Rd, Area 10101, Zambia
+       
+         
+  
           <br />
-          P.O. Box 35168, Lusaka
+          (+260) (979) 121827 
           <br />
-          (+260) (211) 241477/387001/9
-          <br />
-          (+260) (211) 846224/846225
-          <br />
-          saro@saroagri.co.zm
+          info@growmoreweb.com
         </ul>
       ),
       

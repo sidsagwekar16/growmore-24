@@ -43,21 +43,23 @@ export const AboutPage: React.FC = () => {
       </section>
 
       <ContentSection
-        title="Our Vision"
-        heading="Transforming Agriculture, Empowering Communities"
-        description="At Growmore Technologies Limited, we envision a future where modern technology and sustainable practices revolutionize the agricultural landscape in Africa. Our goal is to equip farmers with state-of-the-art machinery and knowledge to enhance productivity, efficiency, and profitability.Through innovation and dedication, we strive to bridge the gap between tradition and technology, ensuring that agriculture remains a thriving and resilient sector. By empowering farmers with cutting-edge solution"
-        buttonText="Discover More"
-        imageSrc="https://agfundernews.com/wp-content/uploads/2022/08/281832544_4872557739523316_4916680536175142455_n.jpeg"
-      />
+  title="Our Vision"
+  heading="Transforming Agriculture, Empowering Communities"
+  description="At Growmore Technologies Limited, we envision a future where modern technology and sustainable practices revolutionize the agricultural landscape in Africa. Our goal is to equip farmers with state-of-the-art machinery and knowledge to enhance productivity, efficiency, and profitability.Through innovation and dedication, we strive to bridge the gap between tradition and technology, ensuring that agriculture remains a thriving and resilient sector. By empowering farmers with cutting-edge solution"
+  buttonText="Discover More"
+  buttonLink="/blog" // Add this line
+  imageSrc="https://agfundernews.com/wp-content/uploads/2022/08/281832544_4872557739523316_4916680536175142455_n.jpeg"
+/>
 
-      <ContentSection
-        title="Our Mission"
-        heading="Empowering Agriculture, Enhancing Lives"
-        description="Growmore Technologies Limited is a Zambian company specializing in agricultural machinery, with branches across Zambia and Malawi. As the sole distributors of Farmtrac tractors, we also offer agricultural motorbikes, implements, irrigation systems, and greenhouse solutions. Our team is committed to supporting farmers through training, demonstrations, and exceptional after-sales services. We focus on bringing innovative technologies to the agriculture sector, driving sustainable growth and mechanization for a prosperous future."
-        buttonText="View Products"
-        imageSrc="https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/62df320f6d949eaac5f249fda322a84a5fc541b3b439c773544ffc7b9043b26c?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"
-        isReversed={true}
-      />
+<ContentSection
+  title="Our Mission"
+  heading="Empowering Agriculture, Enhancing Lives"
+  description="Growmore Technologies Limited is a Zambian company specializing in agricultural machinery, with branches across Zambia and Malawi. As the sole distributors of Farmtrac tractors, we also offer agricultural motorbikes, implements, irrigation systems, and greenhouse solutions. Our team is committed to supporting farmers through training, demonstrations, and exceptional after-sales services. We focus on bringing innovative technologies to the agriculture sector, driving sustainable growth and mechanization for a prosperous future."
+  buttonText="View Products"
+  buttonLink="/categories" // Add this line
+  imageSrc="https://cdn.builder.io/api/v1/image/assets/2dcb31e5737f4026b1bb340f0bb21a44/62df320f6d949eaac5f249fda322a84a5fc541b3b439c773544ffc7b9043b26c?apiKey=2dcb31e5737f4026b1bb340f0bb21a44&"
+  isReversed={true}
+/>
 
       <section className="box-border flex relative flex-col shrink-0">
         <div className="flex flex-col items-start mt-24 px-8 sm:ml-20 md:ml-8 lg:ml-20 sm:px-12 max-w-full w-[223px] max-md:mt-10 max-md:ml-2.5">

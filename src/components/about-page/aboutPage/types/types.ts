@@ -21,6 +21,8 @@ export interface ContentSectionProps {
   buttonText: string;
   imageSrc: string;
   isReversed?: boolean;
+  buttonHref?: string; // for external
+  buttonLink?: string; // for internal routing
 }
 
 export interface QuickLinkProps {

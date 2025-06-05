@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { ContentSectionProps } from "../types/types";
 
 export const ContentSection: React.FC<ContentSectionProps> = ({
@@ -7,13 +8,17 @@ export const ContentSection: React.FC<ContentSectionProps> = ({
   description,
   buttonText,
   imageSrc,
+  buttonHref,
+  buttonLink,
   isReversed = false,
 }) => {
   const content = (
-    <div className="flex flex-col 50 sm:w-[50vw] max-md:max-w-full">
+    <div className="flex flex-col sm:w-[50vw] max-md:max-w-full">
       <div className="flex flex-col w-full max-md:max-w-full">
-        <div className="text-2xl text-red-600 max-md:max-w-full font-covered">{title}</div>
-        <div className="self-start text-5xl font-manrope font-semibold leading-[58px] text-zinc-800 max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+        <div className="text-2xl text-red-600 font-covered max-md:max-w-full">
+          {title}
+        </div>
+        <div className="text-5xl font-manrope font-semibold leading-[58px] text-zinc-800 max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
           {heading}
         </div>
       </div>
@@ -21,12 +26,26 @@ export const ContentSection: React.FC<ContentSectionProps> = ({
         {description}
       </div>
       <div className="flex mt-8 max-w-full bg-sky-800 min-h-[4px] w-[635px]" />
-      <button
-        className="overflow-hidden font-manrope font-semibold px-9 py-4 mt-8 max-w-full text-lg leading-loose text-white bg-sky-800 rounded-xl w-[201px] max-md:px-5"
-        aria-label={buttonText}
-      >
-        {buttonText}
-      </button>
+
+      {buttonLink ? (
+        <Link
+          to={buttonLink}
+          className="overflow-hidden font-manrope font-semibold px-9 py-4 mt-8 max-w-full text-lg leading-loose text-white bg-sky-800 rounded-xl w-[201px] max-md:px-5"
+          aria-label={buttonText}
+        >
+          {buttonText}
+        </Link>
+      ) : buttonHref ? (
+        <a
+          href={buttonHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="overflow-hidden font-manrope font-semibold px-9 py-4 mt-8 max-w-full text-lg leading-loose text-white bg-sky-800 rounded-xl w-[201px] max-md:px-5"
+          aria-label={buttonText}
+        >
+          {buttonText}
+        </a>
+      ) : null}
     </div>
   );
 
@@ -51,7 +70,7 @@ export const ContentSection: React.FC<ContentSectionProps> = ({
       ) : (
         <>
           {image}
-          {content} 
+          {content}
         </>
       )}
     </div>
