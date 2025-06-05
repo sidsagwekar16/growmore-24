@@ -24,25 +24,7 @@ export default function MaintenancePage() {
         We’ll be back online shortly. Thank you for your patience.
       </p>
 
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col sm:flex-row gap-2 w-full max-w-md"
-      >
-        <input
-          type="email"
-          placeholder="Enter your email for updates"
-          className="border border-gray-300 rounded px-4 py-2 w-full"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
-          Notify Me
-        </button>
-      </form>
+      
 
       <p className="text-sm text-gray-400 mt-6">
         © {new Date().getFullYear()} GrowMore Technologies Limited. All rights reserved.
